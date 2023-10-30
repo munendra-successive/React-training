@@ -1,10 +1,10 @@
 import React from "react";
-import Greeting from "./component/Greeting";
-import UserCard from "./component/UserCard";
-import Weather from "./component/Weather";
-import Counter from "./component/Counter";
-import TaskList from "./component/TaskList";
-import Button from "./component/Button";
+import Greeting from "./assignment-1/Greeting";
+import UserCard from "./assignment-1/UserCard";
+import Weather from "./assignment-1/Weather";
+import Counter from "./assignment-1/Counter";
+import TaskList from "./assignment-1/TaskList";
+import Button from "./assignment-1/Button";
 
 function App() {
   const users = [

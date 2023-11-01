@@ -1,42 +1,85 @@
 import React from "react";
-import Greeting from "./assignment-1/Greeting";
-import UserCard from "./assignment-1/UserCard";
-import Weather from "./assignment-1/Weather";
-import Counter from "./assignment-1/Counter";
-import TaskList from "./assignment-1/TaskList";
-import Button from "./assignment-1/Button";
+import "./App.css";
+import Counter from "./assignment-2/Question-1/Counter";
+import PersonForm from "./assignment-2/Question-2/PersonForm";
+import ToDoList from "./assignment-2/Question-3/ToDoList";
+import RandomNumberGenerator from "./assignment-2/Question-4/RandomNumberGenerator";
+import CounterWithStep from "./assignment-2/Question-5/CounterWithStep";
+import Clock from "./assignment-2/Question-6/Clock";
+import Notification from "./assignment-2/Question-7/Notification";
+import SlideShow from "./assignment-2/Question-8/SlideShow";
+import Theme from "./assignment-2/Question-9/Theme";
+import Language from "./assignment-2/Question-10/Language";
+import Shoping from "./assignment-2/Question-11/Shoping";
+import Voting from "./assignment-2/Question-12/Voting";
+import Parent from "./assignment-2/Question-13/Parent";
+import List from "./assignment-2/Question-14/List";
+import StudentList from "./assignment-2/Question-15/StudentList";
+import EmployeeSalary from "./assignment-2/Question-16/EmployeeSalary";
+import CopyButton from "./assignment-2/Question-17/CopyButton";
+import UserPrefence from "./assignment-2/Question-18/UserPrefence";
+import CountDownTimer from "./assignment-2/Question-19/CountDownTimer";
 
 function App() {
-  const users = [
-    {
-      name: "Munendra",
-      email: "munendra@gmail.com",
-      avatarUrl:
-        "https://fastly.picsum.photos/id/494/200/300.jpg?hmac=YdLwRbrTAzFXaAJcsj854mgNuS5jqYM8bcjCzSrSDRM",
-    },
-    {
-      name: "Monu",
-      email: "monu@gmail.com",
-      avatarUrl:
-        "https://fastly.picsum.photos/id/938/200/300.jpg?hmac=MVXKrDXBUPK5fv_Ev3FTdCFeYf9rvJE2Tz9xynjeelM",
-    },
-  ];
-
-  const tasks = ["task 1", "task 2", "task 3", "task 4"];
-
   return (
     <>
-      <Greeting />
-
-      <UserCard users={users} />
-
-      <Weather temperature={34} />
-
-      <Counter />
-
-      <TaskList tasks={tasks} />
-
-      <Button text="Button" color="Yellow" />
+      <div id="question">
+        <Counter />
+      </div>
+      <div id="question">
+        <PersonForm />
+      </div>
+      <div id="question">
+        <ToDoList />
+      </div>
+      <div id="question">
+        <RandomNumberGenerator />
+      </div>
+      <div id="question">
+        <CounterWithStep />
+      </div>
+      <div id="question">
+        <Clock />
+      </div>
+      <div id="question">
+        <Notification />
+      </div>
+      <div id="question">
+        <SlideShow />
+      </div>
+      <div id="question">
+        <Theme />
+      </div>
+      <div id="question">
+        <Language />
+      </div>
+      <div id="question">
+        <Shoping />
+      </div>
+      <div id="question">
+        <Voting />
+      </div>
+      <div id="question">
+        <Parent />
+      </div>
+      <div id="question">
+        <List />
+      </div>
+      <div id="question">
+        <StudentList />
+      </div>
+      <div id="question">
+        <EmployeeSalary />
+      </div>
+      <div id="question">
+        <CopyButton />
+      </div>
+      <div id="question">
+        <UserPrefence />
+      </div>
+      <div id="question">
+        <CountDownTimer />
+      </div>
     </>
   );
 }

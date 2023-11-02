@@ -1,85 +1,47 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 import "./App.css";
-import Counter from "./assignment-2/Question-1/Counter";
-import PersonForm from "./assignment-2/Question-2/PersonForm";
-import ToDoList from "./assignment-2/Question-3/ToDoList";
-import RandomNumberGenerator from "./assignment-2/Question-4/RandomNumberGenerator";
-import CounterWithStep from "./assignment-2/Question-5/CounterWithStep";
-import Clock from "./assignment-2/Question-6/Clock";
-import Notification from "./assignment-2/Question-7/Notification";
-import SlideShow from "./assignment-2/Question-8/SlideShow";
-import Theme from "./assignment-2/Question-9/Theme";
-import Language from "./assignment-2/Question-10/Language";
-import Shoping from "./assignment-2/Question-11/Shoping";
-import Voting from "./assignment-2/Question-12/Voting";
-import Parent from "./assignment-2/Question-13/Parent";
-import List from "./assignment-2/Question-14/List";
-import StudentList from "./assignment-2/Question-15/StudentList";
-import EmployeeSalary from "./assignment-2/Question-16/EmployeeSalary";
-import CopyButton from "./assignment-2/Question-17/CopyButton";
-import UserPrefence from "./assignment-2/Question-18/UserPrefence";
-import CountDownTimer from "./assignment-2/Question-19/CountDownTimer";
+import { Route, Routes } from "react-router-dom";
+//import Parent from "./assignment-3/Question-2/Parent";
+// import Home from "./assignment-3/Question-3/Home";
+// import About from "./assignment-3/Question-3/About";
+// import Error from "./assignment-3/Question-3/Error";
+// import Navbar from "./assignment-3/Question-3/Navbar";
 
+// import Parent from "./assignment-3/Question-2/Parent";
+import Home from "./assignment-3/Question-4/Home";
+import About from "./assignment-3/Question-4/About";
+import Error from "./assignment-3/Question-4/Error";
+import Navbar from "./assignment-3/Question-4/Navbar";
+import Service from "./assignment-3/Question-4/Service";
+
+import { BrowserRouter } from "react-router-dom";
+export const userAuth = createContext();
 function App() {
+  const [login, setLogin] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <>
-      <div id="question">
-        <Counter />
-      </div>
-      <div id="question">
-        <PersonForm />
-      </div>
-      <div id="question">
-        <ToDoList />
-      </div>
-      <div id="question">
-        <RandomNumberGenerator />
-      </div>
-      <div id="question">
-        <CounterWithStep />
-      </div>
-      <div id="question">
-        <Clock />
-      </div>
-      <div id="question">
-        <Notification />
-      </div>
-      <div id="question">
-        <SlideShow />
-      </div>
-      <div id="question">
-        <Theme />
-      </div>
-      <div id="question">
-        <Language />
-      </div>
-      <div id="question">
-        <Shoping />
-      </div>
-      <div id="question">
-        <Voting />
-      </div>
-      <div id="question">
-        <Parent />
-      </div>
-      <div id="question">
-        <List />
-      </div>
-      <div id="question">
-        <StudentList />
-      </div>
-      <div id="question">
-        <EmployeeSalary />
-      </div>
-      <div id="question">
-        <CopyButton />
-      </div>
-      <div id="question">
-        <UserPrefence />
-      </div>
-      <div id="question">
-        <CountDownTimer />
-      </div>
+      <userAuth.Provider
+        value={{
+          login,
+          setLogin,
+          username,
+          setUsername,
+          password,
+          setPassword,
+        }}
+      >
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" Component={Home} />
+            <Route path="/about" Component={About} />
+            <Route path="/service" Component={Service} />
+            <Route path="*" Component={Error} />
+          </Routes>
+        </BrowserRouter>
+      </userAuth.Provider>
     </>
   );
 }

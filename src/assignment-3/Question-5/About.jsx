@@ -4,10 +4,16 @@ import { useNavigate } from "react-router-dom";
 
 const About = () => {
   const { login } = useContext(userAuth);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   return (
     <>
-      {login ? <div>This about Page</div>:<div><button onClick={()=>navigate("/")}>Please LogIn</button></div>}
+      {login ? (
+        <div>This about Page</div>
+      ) : (
+        <div>
+          <button onClick={() => navigate("/")}>Please LogIn</button>
+        </div>
+      )}
     </>
   );
 };

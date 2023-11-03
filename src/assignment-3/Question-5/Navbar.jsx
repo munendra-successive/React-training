@@ -9,6 +9,7 @@ const Navbar = () => {
       <Link to="/">Home Page</Link>
       <Link to="/about">About Page</Link>
       <Link to="/service">Service</Link>
+      <Link to="/Dashboard">Dashboard</Link>
       {login ? (
         <Link onClick={() => setLogin(false)} to="/">
           Log out

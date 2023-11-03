@@ -11,7 +11,7 @@ Develop a component that utilizes the useTimer hook to display and control a cou
 */
 
 const CountDownTimer = () => {
-  const [timerValue, startTimer, pauseTimer, reset, isActive] = useTimer(60);
+  const [timerValue, startTimer, pauseTimer, reset] = useTimer(60);
 
   return (
     <>

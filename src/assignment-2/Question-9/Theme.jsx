@@ -1,5 +1,4 @@
-import { useState, useContext, createContext } from "react";
-import ThemeProvider from "./ThemeProvider";
+import { useState,createContext } from "react";
 /* 
 
 9.Create a theme switcher application using the useContext hook.
@@ -9,14 +8,33 @@ Use the useContext hook to access the theme value and update it.
 Apply different styles and colors to components based on the selected theme.
 
 */
-export const userThemeContext = createContext();
-const Theme = () => {
+
+const styles = {
+  dark: {
+    div: {
+      backgroundColor: "black",
+    },
+    p: {
+      color: "white",
+    },
+  },
+  light: {
+    div: {
+      backgroundColor: "White",
+    },
+    p: {
+      color: "black",
+    },
+  },
+};
+export const ThemeContext = createContext();
+const Theme = ({children}) => {
   const [theme, setTheme] = useState("light");
   return (
     <>
-      <userThemeContext.Provider value={{ theme, setTheme }}>
-        <ThemeProvider />
-      </userThemeContext.Provider>
+      <ThemeContext.Provider value={{ theme, setTheme,styles }}>
+        {children}
+      </ThemeContext.Provider>
     </>
   );
 };

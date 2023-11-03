@@ -9,10 +9,10 @@ Display different language versions of the application's content.
 
 */
 
-import { useState, useContext, createContext } from "react";
-export const userLanguage = createContext();
+import { useState, createContext } from "react";
+export const UserLanguage = createContext();
 
-const Language = () => {
+const Language = ({children}) => {
   const [language, setLanguage] = useState("English");
   return (
     <>
@@ -23,23 +23,10 @@ const Language = () => {
         useContext hook to access the current language value. Display different
         language versions of the application's content.
       </h4>
-      <userLanguage.Provider value={{ language, setLanguage }}>
-        <LanguageProvider />
-      </userLanguage.Provider>
+      <UserLanguage.Provider value={{ language, setLanguage }}>
+        {children}
+      </UserLanguage.Provider>
     </>
-  );
-};
-
-const LanguageProvider = () => {
-  const { language, setLanguage } = useContext(userLanguage);
-  return (
-    <button
-      onClick={() =>
-        language === "English" ? setLanguage("Hindi") : setLanguage("English")
-      }
-    >
-      {language}
-    </button>
   );
 };
 

@@ -9,8 +9,11 @@ import Clock from "./assignment-2/Question-6/Clock";
 import Notification from "./assignment-2/Question-7/Notification";
 import SlideShow from "./assignment-2/Question-8/SlideShow";
 import Theme from "./assignment-2/Question-9/Theme";
+import QuestionNine from "./assignment-2/Question-9/QuestionNine";
 import Language from "./assignment-2/Question-10/Language";
-import Shoping from "./assignment-2/Question-11/Shoping";
+import QuestionTen from "./assignment-2/Question-10/QuestionTen";
+import Shopping from "./assignment-2/Question-11/Shopping";
+import ShoppingCart from "./assignment-2/Question-11/ShoppingCart";
 import Voting from "./assignment-2/Question-12/Voting";
 import Parent from "./assignment-2/Question-13/Parent";
 import List from "./assignment-2/Question-14/List";
@@ -48,13 +51,19 @@ function App() {
         <SlideShow />
       </div>
       <div id="question">
-        <Theme />
+        <Theme>
+          <QuestionNine />
+        </Theme>
       </div>
       <div id="question">
-        <Language />
+        <Language>
+          <QuestionTen />
+        </Language>
       </div>
       <div id="question">
-        <Shoping />
+        <Shopping>
+          <ShoppingCart />
+        </Shopping>
       </div>
       <div id="question">
         <Voting />

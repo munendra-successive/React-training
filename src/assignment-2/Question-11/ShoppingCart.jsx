@@ -1,8 +1,8 @@
-import { useContext, useState } from "react";
-import { UserCart } from "./Shoping";
+import { useContext} from "react";
+import { UserCart } from "./Shopping";
 
-const CartProvider=()=>{
-    const{cart,setCart,products,addItem,Delete}=useContext(UserCart);
+const ShoppingCart=()=>{
+    const{cart,products,addItem,Delete}=useContext(UserCart);
 
     return(
         <>
@@ -44,4 +44,4 @@ const CartProvider=()=>{
     
 }
 
-export default CartProvider;
+export default ShoppingCart;

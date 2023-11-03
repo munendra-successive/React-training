@@ -1,5 +1,4 @@
-import { useState, useContext, createContext } from "react";
-import CartProvider from "./CartProvider";
+import { useState, createContext } from "react";
 
 /*
 
@@ -27,7 +26,7 @@ const products = [
     price: 150,
   },
 ];
-const Shoping = () => {
+const Shopping = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addItem = (item) => {
@@ -57,10 +56,10 @@ const Shoping = () => {
         the cart. Display the total price of items in the cart.
       </h4>
       <UserCart.Provider value={{ cart, setCart, products, addItem, Delete }}>
-        <CartProvider />
+        {children}
       </UserCart.Provider>
     </>
   );
 };
 
-export default Shoping;
+export default Shopping;

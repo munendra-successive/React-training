@@ -1,28 +1,11 @@
 import { useContext } from "react";
-import { userThemeContext } from "./Theme";
+import { ThemeContext } from "./Theme";
 
 
-const ThemeProvider = () => {
-    const {theme, setTheme } = useContext(userThemeContext);
+const QuestionNine = () => {
+    const {theme, setTheme,styles } = useContext(ThemeContext);
   
-    const styles = {
-      dark: {
-        div: {
-          backgroundColor: "black",
-        },
-        p: {
-          color: "white",
-        },
-      },
-      light: {
-        div: {
-          backgroundColor: "White",
-        },
-        p: {
-          color: "black",
-        },
-      },
-    };
+    
     return (
       <>
         <h4>
@@ -39,11 +22,11 @@ const ThemeProvider = () => {
               theme === "light" ? setTheme("dark") : setTheme("light")
             }
           >
-            {theme}
+            Change Theme
           </button>
         </div>
       </>
     );
   };
   
-  export default ThemeProvider;
+  export default QuestionNine;

@@ -1,35 +1,22 @@
-import useTimer from "./useTimer";
-/*
+import useTimer from './useTimer'
 
-19.Build a custom hook named useTimer for creating countdown timers.
-Create a useTimer hook that takes a countdown duration as a parameter.
-Use setInterval to decrement the timer at regular intervals.
-Return the current timer value and methods to start, pause, and reset the timer.
-Develop a component that utilizes the useTimer hook to display and control a countdown.
+function CountDownTimer() {
 
-
-*/
-
-const CountDownTimer = () => {
-  const [timerValue, startTimer, pauseTimer, reset] = useTimer(60);
+  const { timer, isActive, startTimer, pauseTimer, reset } =
+    useTimer(60);
 
   return (
-    <>
-      <h4>
-        19.Build a custom hook named useTimer for creating countdown timers.
-        Create a useTimer hook that takes a countdown duration as a parameter.
-        Use setInterval to decrement the timer at regular intervals. Return the
-        current timer value and methods to start, pause, and reset the timer.
-        Develop a component that utilizes the useTimer hook to display and
-        control a countdown.
-      </h4>
-      <h2>CountDownTimer</h2>
-      <p>Time Left: {timerValue} seconds</p>
-      <button onClick={pauseTimer}>Pause</button>
-      <button onClick={startTimer}>Start</button>
+    <div>
+    <h1>CountDownTimer</h1>
+      <h4>Time Left: {timer} seconds</h4>
+      {isActive ? (
+        <button onClick={pauseTimer}>Pause</button>
+      ) : (
+        <button onClick={startTimer}>Start</button>
+      )}
       <button onClick={reset}>Reset</button>
-    </>
+    </div>
   );
-};
+}
 
 export default CountDownTimer;

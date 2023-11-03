@@ -8,11 +8,11 @@ import CounterWithStep from "./assignment-2/Question-5/CounterWithStep";
 import Clock from "./assignment-2/Question-6/Clock";
 import Notification from "./assignment-2/Question-7/Notification";
 import SlideShow from "./assignment-2/Question-8/SlideShow";
-import Theme from "./assignment-2/Question-9/Theme";
+import ThemeProvider from "./assignment-2/Question-9/ThemeProvider";
 import QuestionNine from "./assignment-2/Question-9/QuestionNine";
-import Language from "./assignment-2/Question-10/Language";
+import LanguageProvider from "./assignment-2/Question-10/LanguageProvider";
 import QuestionTen from "./assignment-2/Question-10/QuestionTen";
-import Shopping from "./assignment-2/Question-11/Shopping";
+import ShopProvider from "./assignment-2/Question-11/ShopProvider";
 import ShoppingCart from "./assignment-2/Question-11/ShoppingCart";
 import Voting from "./assignment-2/Question-12/Voting";
 import Parent from "./assignment-2/Question-13/Parent";
@@ -20,7 +20,7 @@ import List from "./assignment-2/Question-14/List";
 import StudentList from "./assignment-2/Question-15/StudentList";
 import EmployeeSalary from "./assignment-2/Question-16/EmployeeSalary";
 import CopyButton from "./assignment-2/Question-17/CopyButton";
-import UserPrefence from "./assignment-2/Question-18/UserPrefence";
+import UserPrefence from "./assignment-2/Question-18/Uselocal";
 import CountDownTimer from "./assignment-2/Question-19/CountDownTimer";
 
 function App() {
@@ -51,19 +51,19 @@ function App() {
         <SlideShow />
       </div>
       <div id="question">
-        <Theme>
+        <ThemeProvider>
           <QuestionNine />
-        </Theme>
+        </ThemeProvider>
       </div>
       <div id="question">
-        <Language>
+        <LanguageProvider>
           <QuestionTen />
-        </Language>
+        </LanguageProvider>
       </div>
       <div id="question">
-        <Shopping>
+        <ShopProvider>
           <ShoppingCart />
-        </Shopping>
+        </ShopProvider>
       </div>
       <div id="question">
         <Voting />

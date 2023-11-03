@@ -10,7 +10,7 @@ Allow users to add and remove items from the cart.
 Display the total price of items in the cart.
 
 */
-export const UserCart = createContext();
+export const CartContext = createContext();
 
 const products = [
   {
@@ -26,7 +26,7 @@ const products = [
     price: 150,
   },
 ];
-const Shopping = ({ children }) => {
+const ShopProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addItem = (item) => {
@@ -55,11 +55,11 @@ const Shopping = ({ children }) => {
         the cart state and update it. Allow users to add and remove items from
         the cart. Display the total price of items in the cart.
       </h4>
-      <UserCart.Provider value={{ cart, setCart, products, addItem, Delete }}>
+      <CartContext.Provider value={{ cart, setCart, products, addItem, Delete }}>
         {children}
-      </UserCart.Provider>
+      </CartContext.Provider>
     </>
   );
 };
 
-export default Shopping;
+export default ShopProvider;

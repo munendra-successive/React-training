@@ -26,14 +26,14 @@ const List = () => {
 
   const Mark = useCallback((id) => {
     setStatus(
-      arr.map((item) => {
+      status.map((item) => {
         if (item.id === id) {
           item.status = "Complete";
         }
         return item;
       })
     );
-  }, arr);
+  }, [status]);
 
   return (
     <div>

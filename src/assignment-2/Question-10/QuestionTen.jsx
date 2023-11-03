@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { UserLanguage } from "./Language";
+import { LanguageContext } from "./LanguageProvider";
 
 const QuestionTen = () => {
-    const { language, setLanguage } = useContext(UserLanguage);
+    const { language, setLanguage } = useContext(LanguageContext);
     return (
       <button
         onClick={() =>

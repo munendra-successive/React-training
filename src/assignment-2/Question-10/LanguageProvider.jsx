@@ -10,9 +10,9 @@ Display different language versions of the application's content.
 */
 
 import { useState, createContext } from "react";
-export const UserLanguage = createContext();
+export const LanguageContext = createContext();
 
-const Language = ({children}) => {
+const LanguageProvider = ({children}) => {
   const [language, setLanguage] = useState("English");
   return (
     <>
@@ -23,11 +23,11 @@ const Language = ({children}) => {
         useContext hook to access the current language value. Display different
         language versions of the application's content.
       </h4>
-      <UserLanguage.Provider value={{ language, setLanguage }}>
+      <LanguageContext.Provider value={{ language, setLanguage }}>
         {children}
-      </UserLanguage.Provider>
+      </LanguageContext.Provider>
     </>
   );
 };
 
-export default Language;
+export default LanguageProvider;

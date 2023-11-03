@@ -1,8 +1,8 @@
 import { useContext} from "react";
-import { UserCart } from "./Shopping";
+import { CartContext } from "./ShopProvider";
 
 const ShoppingCart=()=>{
-    const{cart,products,addItem,Delete}=useContext(UserCart);
+    const{cart,products,addItem,Delete}=useContext(CartContext);
 
     return(
         <>

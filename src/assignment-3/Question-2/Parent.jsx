@@ -11,7 +11,6 @@ Display the theme preference in the UI and adjust the component's styling accord
 
 import React from "react";
 import { createContext, useState } from "react";
-import Child from "./Child";
 
 export const UserAuth = createContext();
 export const UserPref = createContext();
@@ -34,7 +33,7 @@ const styles = {
   },
 };
 
-const Parent = () => {
+const Parent = ({children}) => {
   const [islogin, setLogin] = useState(false);
   const userDetails = {
     name: "Monu",
@@ -43,14 +42,14 @@ const Parent = () => {
 
   const [theme, setTheme] = useState("light");
   const handleClickPref = () => {
-    return theme === "light" ? setTheme("dark") : setTheme("light");
+    theme === "light" ? setTheme("dark") : setTheme("light");
   };
 
   return (
     <>
       <UserAuth.Provider value={{ islogin, setLogin, userDetails }}>
         <UserPref.Provider value={{ styles, theme, handleClickPref }}>
-          <Child />
+          {children}
         </UserPref.Provider>
       </UserAuth.Provider>
     </>

@@ -59,3 +59,12 @@ ul {
   width: 50%;
   padding: 10px;
 }
+
+nav {
+  background: #63d471;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem calc((100vw - 1000px) / 2);
+  z-index: 12;
+}

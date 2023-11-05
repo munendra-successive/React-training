@@ -6,6 +6,7 @@ const Navbar = () => {
   const { login, setLogin } = useContext(userAuth);
   return (
     <>
+    <nav>
       <Link to="/">Home Page</Link>
       <Link to="/about">About Page</Link>
       <Link to="/service">Service</Link>
@@ -17,6 +18,7 @@ const Navbar = () => {
       ) : (
         <Link to="/">LogIn</Link>
       )}
+      </nav>
     </>
   );
 };

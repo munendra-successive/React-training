@@ -15,7 +15,17 @@ const Child = () => {
 
   return (
     <>
+      <h4>
+        2.Extend the previous application to demonstrate the use of nested
+        contexts. Create a new context to manage user preferences (e.g., theme
+        preference). Modify the parent component to provide both the
+        authentication and preferences contexts. Create a child component that
+        consumes both contexts. Allow the user to change their theme preference
+        (light/dark) using a button in the child component. Display the theme
+        preference in the UI and adjust the component's styling accordingly.
+      </h4>
       <div style={styles[theme].div}>
+        {islogin ? <p>Welcome {username}</p> : <p>Please Log In</p>}
         <label>Username </label>
         <input
           type="text"
@@ -35,8 +45,8 @@ const Child = () => {
           }}
         />
         <button onClick={handleClick}>Login</button>
-        {islogin ? <p>Welcome {username}</p> : <p>Please Log In</p>}
-
+      </div>
+      <div>
         <button onClick={handleClickPref}>Change Theme</button>
       </div>
     </>

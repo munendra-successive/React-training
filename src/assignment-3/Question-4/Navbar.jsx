@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { userAuth } from "../../App";
+import { UserAuth } from "./Login";
 
 const Navbar = () => {
-  const { login, setLogin } = useContext(userAuth);
+  const { login, setLogin } = useContext(UserAuth);
   return (
     <>
       <Link to="/">Home Page</Link>

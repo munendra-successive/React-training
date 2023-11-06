@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { UserAuth } from "./Login";
+import { UserAuth } from "../../App";
 import { useNavigate } from "react-router-dom";
 
 

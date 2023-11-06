@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { userAuth } from "../../App";
+import { UserAuth } from "../../App";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-  const { login } = useContext(userAuth);
+  const { login } = useContext(UserAuth);
   const navigate = useNavigate();
   return (
     <>
@@ -19,7 +19,7 @@ const Dashboard = () => {
         </div>
       ) : (
         <div>
-          <button onClick={() => navigate("/")}>Please LogIn</button>
+          <button onClick={() => navigate("/homefive")}>Please LogIn</button>
         </div>
       )}
     </>

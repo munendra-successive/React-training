@@ -4,7 +4,7 @@ const About = () => {
   const navigate = useNavigate();
   return (
     <>
-      <h1>This is About Page</h1>
+      <h4>This is About Page</h4>
       <button onClick={() => navigate(-1)}>Back</button>
     </>
   );

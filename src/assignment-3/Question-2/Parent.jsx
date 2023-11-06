@@ -33,7 +33,7 @@ const styles = {
   },
 };
 
-const Parent = ({children}) => {
+const Parent = ({ children }) => {
   const [islogin, setLogin] = useState(false);
   const userDetails = {
     name: "Monu",

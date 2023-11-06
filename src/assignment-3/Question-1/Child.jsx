@@ -3,8 +3,8 @@ import { UserAuthenticate } from "./Parent";
 
 const Child = () => {
   const { setLogin, islogin, userDetails } = useContext(UserAuthenticate);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
 
   const handleClick = () => {
     if (userDetails.name === username && userDetails.pass === password) {
@@ -21,10 +21,16 @@ const Child = () => {
         button in the child component that, when clicked, updates the
         authentication status in the context to "logged in." Display a message
         in the child component based on the user's authentication status. If the
-        user is logged in, s how "Welcome, [username]!" Otherwise, display
+        user is logged in, show "Welcome, [username]!" Otherwise, display
         "Please log in."
       </h4>
-      {islogin ? <p>Welcome {username}</p> : <p>Please Log In</p>}
+      {islogin ? (
+        <p>
+          Welcome <h3>{username}</h3>
+        </p>
+      ) : (
+        <p>Please Log In</p>
+      )}
       <label>Username </label>
       <input
         type="text"

@@ -11,16 +11,16 @@ Customize the content displayed on each sub-page.
 import React, { useContext } from "react";
 
 import { useNavigate } from "react-router-dom";
-import { userAuth } from "../../App";
+import { UserAuth } from "../../App";
 const Home = () => {
   const navigate = useNavigate();
   const { login, setLogin, username, setUsername, password, setPassword } =
-    useContext(userAuth);
+    useContext(UserAuth);
 
   const handleClick = () => {
     if (username === "Monu" && password === "Monu@123") {
       setLogin(true);
-      navigate("/");
+      navigate("/homefive");
     }
   };
 
@@ -28,7 +28,7 @@ const Home = () => {
     <>
       <p>
         {login ? (
-          <p>Welcome {username} </p>
+          <h4>Welcome {username} </h4>
         ) : (
           <div>
             <input

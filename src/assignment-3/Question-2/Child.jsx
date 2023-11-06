@@ -25,7 +25,13 @@ const Child = () => {
         preference in the UI and adjust the component's styling accordingly.
       </h4>
       <div style={styles[theme].div}>
-        {islogin ? <p>Welcome {username}</p> : <p>Please Log In</p>}
+        {islogin ? (
+          <p>
+            Welcome <h3>{username}</h3>
+          </p>
+        ) : (
+          <p>Please Log In</p>
+        )}
         <label>Username </label>
         <input
           type="text"

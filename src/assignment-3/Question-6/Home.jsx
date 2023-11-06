@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
-      <h1>This is Assignment 6</h1>
+      <h1>This is Question 6</h1>
 
       <ul>
         {Product.map((item) => (

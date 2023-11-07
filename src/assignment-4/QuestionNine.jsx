@@ -92,10 +92,11 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-export default function MiniDrawer() {
+const QuestionNine = () => {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const [menuData, setMenuData] = useState("Home");
+  const [isShow, setShow] = useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -104,158 +105,181 @@ export default function MiniDrawer() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <AppBar position="fixed" open={open}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              marginRight: 5,
-              ...(open && { display: "none" }),
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-             Drawer
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer variant="permanent" open={open}>
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "rtl" ? (
-              <ChevronRightIcon />
-            ) : (
-              <ChevronLeftIcon />
-            )}
-          </IconButton>
-        </DrawerHeader>
-        <Divider />
-        <List>
-          <ListItem
-            disablePadding
-            sx={{ display: "block" }}
-            onClick={() => {
-              setMenuData("Home");
-            }}
-          >
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? "initial" : "center",
-                px: 2.5,
-              }}
-            >
-              <ListItemIcon
+    <>
+      <div style={{ display: "flex", justifyContent: "center"}}>
+        <button
+          onClick={(e) => {
+            setShow(!isShow);
+          }}
+        >
+          Open/Close Drawer
+        </button>
+      </div>
+      {isShow ? (
+        <Box sx={{ display: "flex" }}>
+          <CssBaseline />
+          <AppBar position="fixed" open={open}>
+            <Toolbar>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerOpen}
+                edge="start"
                 sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : "auto",
-                  justifyContent: "center",
+                  marginRight: 5,
+                  ...(open && { display: "none" }),
                 }}
               >
-                <AiFillHome />
-              </ListItemIcon>
-              <ListItemText primary="Home" sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
-          </ListItem>
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h6" noWrap component="div">
+                Drawer
+              </Typography>
+            </Toolbar>
+          </AppBar>
+          <Drawer variant="permanent" open={open}>
+            <DrawerHeader>
+              <IconButton onClick={handleDrawerClose}>
+                {theme.direction === "rtl" ? (
+                  <ChevronRightIcon />
+                ) : (
+                  <ChevronLeftIcon />
+                )}
+              </IconButton>
+            </DrawerHeader>
+            <Divider />
+            <List>
+              <ListItem
+                disablePadding
+                sx={{ display: "block" }}
+                onClick={() => {
+                  setMenuData("Home");
+                }}
+              >
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <AiFillHome />
+                  </ListItemIcon>
+                  <ListItemText primary="Home" sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
 
-          <ListItem
-            disablePadding
-            sx={{ display: "block" }}
-            onClick={() => {
-              setMenuData("About");
-            }}
-          >
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? "initial" : "center",
-                px: 2.5,
-              }}
-            >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : "auto",
-                  justifyContent: "center",
+              <ListItem
+                disablePadding
+                sx={{ display: "block" }}
+                onClick={() => {
+                  setMenuData("About");
                 }}
               >
-                <FcAbout />
-              </ListItemIcon>
-              <ListItemText primary="About" sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
-          </ListItem>
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <FcAbout />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="About"
+                    sx={{ opacity: open ? 1 : 0 }}
+                  />
+                </ListItemButton>
+              </ListItem>
 
-          <ListItem
-            disablePadding
-            sx={{ display: "block" }}
-            onClick={() => {
-              setMenuData("Contact");
-            }}
-          >
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? "initial" : "center",
-                px: 2.5,
-              }}
-            >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : "auto",
-                  justifyContent: "center",
+              <ListItem
+                disablePadding
+                sx={{ display: "block" }}
+                onClick={() => {
+                  setMenuData("Contact");
                 }}
               >
-                <FcBusinessContact />
-              </ListItemIcon>
-              <ListItemText primary="Contact" sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
-          </ListItem>
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <FcBusinessContact />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Contact"
+                    sx={{ opacity: open ? 1 : 0 }}
+                  />
+                </ListItemButton>
+              </ListItem>
 
-          <ListItem
-            disablePadding
-            sx={{ display: "block" }}
-            onClick={() => {
-              setMenuData("Service");
-            }}
-          >
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? "initial" : "center",
-                px: 2.5,
-              }}
-            >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : "auto",
-                  justifyContent: "center",
+              <ListItem
+                disablePadding
+                sx={{ display: "block" }}
+                onClick={() => {
+                  setMenuData("Service");
                 }}
               >
-                <GrServices />
-              </ListItemIcon>
-              <ListItemText primary="Service" sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
-          </ListItem>
-        </List>
-        <Divider />
-      </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
-        {menuData === "Home" && <Home />}
-        {menuData === "About" && <About />}
-        {menuData === "Contact" && <Contact />}
-        {menuData === "Service" && <Service />}
-      </Box>
-    </Box>
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <GrServices />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Service"
+                    sx={{ opacity: open ? 1 : 0 }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            </List>
+            <Divider />
+          </Drawer>
+          <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+            <DrawerHeader />
+            {menuData === "Home" && <Home />}
+            {menuData === "About" && <About />}
+            {menuData === "Contact" && <Contact />}
+            {menuData === "Service" && <Service />}
+          </Box>
+        </Box>
+      ) : null}
+    </>
   );
-}
+};
+
+export default QuestionNine;

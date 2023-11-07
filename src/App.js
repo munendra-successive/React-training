@@ -1,29 +1,31 @@
 import { Link, Route, Routes } from "react-router-dom";
 import { useState, createContext } from "react";
 import "./App.css";
-import ParentOne from "./assignment-3/Question-1/Parent";
-import ChildOne from "./assignment-3/Question-1/Child";
-import ParentTwo from "./assignment-3/Question-2/Parent";
-import ChildTwo from "./assignment-3/Question-2/Child";
-import HomeThree from "./assignment-3/Question-3/Home";
-import AboutThree from "./assignment-3/Question-3/About";
-import ErrorThree from "./assignment-3/Question-3/Error";
-import NavbarThree from "./assignment-3/Question-3/Navbar";
-import HomeFour from "./assignment-3/Question-4/Home";
-import AboutFour from "./assignment-3/Question-4/About";
-import ServiceFour from "./assignment-3/Question-4/Service";
-import ErrorFour from "./assignment-3/Question-4/Error";
-import NavbarFour from "./assignment-3/Question-4/Navbar";
-import HomeFive from "./assignment-3/Question-5/Home";
-import About from "./assignment-3/Question-5/About";
-import NavbarFive from "./assignment-3/Question-5/Navbar";
-import Service from "./assignment-3/Question-5/Service";
-import Dashboard from "./assignment-3/Question-5/Dashboard";
-import Profile from "./assignment-3/Question-5/Profile";
-import Setting from "./assignment-3/Question-5/Setting";
-import ErrorFive from "./assignment-3/Question-5/Error";
-import HomeSix from "./assignment-3/Question-6/Home";
-import ProductDetail from "./assignment-3/Question-6/ProductDetail";
+import {
+  ParentOne,
+  ChildOne,
+  ParentTwo,
+  ChildTwo,
+  HomeThree,
+  ErrorThree,
+  AboutThree,
+  NavbarThree,
+  AboutFour,
+  ErrorFour,
+  HomeFour,
+  NavbarFour,
+  ServiceFour,
+  AboutFive,
+  DashboardFive,
+  ErrorFive,
+  HomeFive,
+  NavbarFive,
+  ProfileFive,
+  ServiceFive,
+  SettingFive,
+  HomeSix,
+  ProductDetail,
+} from "./assignment-3";
 
 export const UserAuth = createContext();
 
@@ -49,7 +51,7 @@ function App() {
       </div>
 
       {/* Question - 3 */}
-      
+
       <div id="question">
         <h4>
           3.create pages: Home and About. Implement routing using React Router
@@ -61,7 +63,7 @@ function App() {
         <Routes>
           <Route path="/homethree" element={<HomeThree />} />
           <Route path="/aboutthree" element={<AboutThree />} />
-          <Route path="*" element={<ErrorThree/>}/>
+          <Route path="*" element={<ErrorThree />} />
         </Routes>
       </div>
 
@@ -92,7 +94,7 @@ function App() {
             <Route path="/homefour" element={<HomeFour />} />
             <Route path="/aboutfour" element={<AboutFour />} />
             <Route path="/servicefour" element={<ServiceFour />} />
-            <Route path="*" element={<ErrorFour/>}/>
+            <Route path="*" element={<ErrorFour />} />
           </Routes>
         </UserAuth.Provider>
       </div>
@@ -122,12 +124,12 @@ function App() {
           <NavbarFive />
           <Routes>
             <Route path="/homefive" element={<HomeFive />} />
-            <Route path="/aboutfive" element={<About />} />
-            <Route path="/servicefive" element={<Service />} />
-            <Route path="*" element={<ErrorFive/>}/>
-            <Route path="/dashboardfive" element={<Dashboard />} />
-            <Route path="/dashboardfive/profile" element={<Profile />} />
-            <Route path="/dashboardfive/setting" element={<Setting />} />
+            <Route path="/aboutfive" element={<AboutFive />} />
+            <Route path="/servicefive" element={<ServiceFive />} />
+            <Route path="*" element={<ErrorFive />} />
+            <Route path="/dashboardfive" element={<DashboardFive />} />
+            <Route path="/dashboardfive/profile" element={<ProfileFive />} />
+            <Route path="/dashboardfive/setting" element={<SettingFive />} />
           </Routes>
         </UserAuth.Provider>
       </div>

@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import { UserAuth } from "../../App";
 
 const Navbar = () => {
-  const { login, setLogin } = useContext(UserAuth);
+  const { loginfour, setLoginFour } = useContext(UserAuth);
   return (
     <>
       <nav>
         <Link to="/homefour">Home Page</Link>
         <Link to="/aboutfour">About Page</Link>
         <Link to="/servicefour">Service</Link>
-        {login ? (
-          <Link onClick={() => setLogin(false)} to="/">
+        {loginfour ? (
+          <Link onClick={() => setLoginFour(false)} to="/homefour">
             Log out
           </Link>
         ) : (

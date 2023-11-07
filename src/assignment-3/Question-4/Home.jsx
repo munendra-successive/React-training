@@ -15,33 +15,38 @@ import { useNavigate } from "react-router-dom";
 import { UserAuth } from "../../App";
 const Home = () => {
   const navigate = useNavigate();
-  const {login,setLogin, username, setUsername, password, setPassword } =
+  const {loginfour,
+    setLoginFour,
+    usernamefour,
+    setUsernameFour,
+    passwordfour,
+    setPasswordFour, } =
     useContext(UserAuth);
 
   const handleClick = () => {
-    if (username === "Monu" && password === "Monu@123") {
-      setLogin(true);
-      navigate("/");
+    if (usernamefour === "Monu" && passwordfour === "Monu@123") {
+      setLoginFour(true);
+      navigate("/homefour");
     }
   };
 
   return (
     <>
       <p>
-        {login ? (
-          <p>Welcome {username} </p>
+        {loginfour ? (
+          <p>Welcome {usernamefour} </p>
         ) : (
           <div>
             <input
               type="text"
-              onChange={(e) => setUsername(e.target.value)}
-              value={username}
+              onChange={(e) => setUsernameFour(e.target.value)}
+              value={usernamefour}
               placeholder="Enter Username"
             ></input>
             <input
               type="password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
+              onChange={(e) => setPasswordFour(e.target.value)}
+              value={passwordfour}
               placeholder="Enter Password"
             ></input>
             <button onClick={handleClick}>Login</button>

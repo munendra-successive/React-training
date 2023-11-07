@@ -1,44 +1,97 @@
 import React from "react";
-import Greeting from "./assignment-1/Greeting";
-import UserCard from "./assignment-1/UserCard";
-import Weather from "./assignment-1/Weather";
-import Counter from "./assignment-1/Counter";
-import TaskList from "./assignment-1/TaskList";
-import Button from "./assignment-1/Button";
+import "./App.css";
+import {
+  Counter,
+  PersonForm,
+  ToDoList,
+  RandomNumberGenerator,
+  CounterWithStep,
+  Clock,
+  Notification,
+  SlideShow,
+  QuestionNine,
+  ThemeProvider,
+  LanguageProvider,
+  QuestionTen,
+  ShopProvider,
+  ShoppingCart,
+  Voting,
+  Parent,
+  List,
+  StudentList,
+  EmployeeSalary,
+  CopyButton,
+  UseLocal,
+  CountDownTimer,
+} from "./assignment-2";
 
 function App() {
-  const users = [
-    {
-      name: "Munendra",
-      email: "munendra@gmail.com",
-      avatarUrl:
-        "https://fastly.picsum.photos/id/494/200/300.jpg?hmac=YdLwRbrTAzFXaAJcsj854mgNuS5jqYM8bcjCzSrSDRM",
-    },
-    {
-      name: "Monu",
-      email: "monu@gmail.com",
-      avatarUrl:
-        "https://fastly.picsum.photos/id/938/200/300.jpg?hmac=MVXKrDXBUPK5fv_Ev3FTdCFeYf9rvJE2Tz9xynjeelM",
-    },
-  ];
-
-  const tasks = ["task 1", "task 2", "task 3", "task 4"];
-
   return (
     <>
-      <Greeting />
-
-      <UserCard users={users} />
-
-      <Weather temperature={34} />
-
-      <Counter />
-
-      <TaskList tasks={tasks} />
-
-      <Button text="Button" color="Yellow" />
+      <div id="question">
+        <Counter />
+      </div>
+      <div id="question">
+        <PersonForm />
+      </div>
+      <div id="question">
+        <ToDoList />
+      </div>
+      <div id="question">
+        <RandomNumberGenerator />
+      </div>
+      <div id="question">
+        <CounterWithStep />
+      </div>
+      <div id="question">
+        <Clock />
+      </div>
+      <div id="question">
+        <Notification />
+      </div>
+      <div id="question">
+        <SlideShow />
+      </div>
+      <div id="question">
+        <ThemeProvider>
+          <QuestionNine />
+        </ThemeProvider>
+      </div>
+      <div id="question">
+        <LanguageProvider>
+          <QuestionTen />
+        </LanguageProvider>
+      </div>
+      <div id="question">
+        <ShopProvider>
+          <ShoppingCart />
+        </ShopProvider>
+      </div>
+      <div id="question">
+        <Voting />
+      </div>
+      <div id="question">
+        <Parent />
+      </div>
+      <div id="question">
+        <List />
+      </div>
+      <div id="question">
+        <StudentList />
+      </div>
+      <div id="question">
+        <EmployeeSalary />
+      </div>
+      <div id="question">
+        <CopyButton />
+      </div>
+      <div id="question">
+        <UseLocal />
+      </div>
+      <div id="question">
+        <CountDownTimer />
+      </div>
     </>
   );
 }
-
 export default App;

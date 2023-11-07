@@ -29,7 +29,7 @@ const products = [
 const ShopProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  const addItem = (item) => {
+  const handleAddItem = (item) => {
     setCart([
       ...cart,
       {
@@ -41,7 +41,7 @@ const ShopProvider = ({ children }) => {
     ]);
   };
 
-  const Delete = (id) => {
+  const handleDeleteItem = (id) => {
     const updatedItem = cart.filter((item) => item.id !== id);
     setCart(updatedItem);
   };
@@ -55,7 +55,7 @@ const ShopProvider = ({ children }) => {
         the cart state and update it. Allow users to add and remove items from
         the cart. Display the total price of items in the cart.
       </h4>
-      <CartContext.Provider value={{ cart, setCart, products, addItem, Delete }}>
+      <CartContext.Provider value={{ cart, setCart, products, handleAddItem, handleDeleteItem }}>
         {children}
       </CartContext.Provider>
     </>

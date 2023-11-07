@@ -12,7 +12,7 @@ Develop a component that uses the useLocalStorage hook to manage user preference
 
 */
 
-const Uselocal = () => {
+const UseLocal = () => {
   const [key, setKey] = useState("")
   const [value, setValue1] = useState("");
   const [receivedValue, setReceivedValue] = useState("");
@@ -75,4 +75,4 @@ const Uselocal = () => {
     </>
   );
 };
-export default Uselocal;
+export default UseLocal;

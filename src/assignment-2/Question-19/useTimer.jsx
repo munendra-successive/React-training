@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-
+import { useState, useEffect } from "react";
 
 function useTimer(duration) {
   const [timer, setTimer] = useState(duration);
@@ -34,7 +33,7 @@ function useTimer(duration) {
     }
 
     return () => clearInterval(interval);
-  }, [isActive,duration]);
+  }, [isActive, duration]);
 
   return {
     timer,

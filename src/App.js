@@ -1,27 +1,29 @@
 import React from "react";
 import "./App.css";
-import Counter from "./assignment-2/Question-1/Counter";
-import PersonForm from "./assignment-2/Question-2/PersonForm";
-import ToDoList from "./assignment-2/Question-3/ToDoList";
-import RandomNumberGenerator from "./assignment-2/Question-4/RandomNumberGenerator";
-import CounterWithStep from "./assignment-2/Question-5/CounterWithStep";
-import Clock from "./assignment-2/Question-6/Clock";
-import Notification from "./assignment-2/Question-7/Notification";
-import SlideShow from "./assignment-2/Question-8/SlideShow";
-import ThemeProvider from "./assignment-2/Question-9/ThemeProvider";
-import QuestionNine from "./assignment-2/Question-9/QuestionNine";
-import LanguageProvider from "./assignment-2/Question-10/LanguageProvider";
-import QuestionTen from "./assignment-2/Question-10/QuestionTen";
-import ShopProvider from "./assignment-2/Question-11/ShopProvider";
-import ShoppingCart from "./assignment-2/Question-11/ShoppingCart";
-import Voting from "./assignment-2/Question-12/Voting";
-import Parent from "./assignment-2/Question-13/Parent";
-import List from "./assignment-2/Question-14/List";
-import StudentList from "./assignment-2/Question-15/StudentList";
-import EmployeeSalary from "./assignment-2/Question-16/EmployeeSalary";
-import CopyButton from "./assignment-2/Question-17/CopyButton";
-import UserPrefence from "./assignment-2/Question-18/Uselocal";
-import CountDownTimer from "./assignment-2/Question-19/CountDownTimer";
+import {
+  Counter,
+  PersonForm,
+  ToDoList,
+  RandomNumberGenerator,
+  CounterWithStep,
+  Clock,
+  Notification,
+  SlideShow,
+  QuestionNine,
+  ThemeProvider,
+  LanguageProvider,
+  QuestionTen,
+  ShopProvider,
+  ShoppingCart,
+  Voting,
+  Parent,
+  List,
+  StudentList,
+  EmployeeSalary,
+  CopyButton,
+  UseLocal,
+  CountDownTimer,
+} from "./assignment-2";
 
 function App() {
   return (
@@ -84,7 +86,7 @@ function App() {
         <CopyButton />
       </div>
       <div id="question">
-        <UserPrefence />
+        <UseLocal />
       </div>
       <div id="question">
         <CountDownTimer />
@@ -92,5 +94,4 @@ function App() {
     </>
   );
 }
-
 export default App;

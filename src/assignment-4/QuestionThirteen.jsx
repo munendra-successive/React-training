@@ -31,77 +31,87 @@ const QuestionThirteen = () => {
     });
 
   return (
-    <FormGroup onSubmit={handleSubmit}>
-      <FormControl>
-        <Box
-          component="form"
-          sx={{
-            "& > :not(style)": { m: 1, width: "25ch" },
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <Box>
-            <TextField
-              id="outlined-basic"
-              label="UserName"
-              name="name"
-              variant="outlined"
-              value={values.name}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            {errors.name && touched.name ? (
-              <p className="form-errors">{errors.name}</p>
-            ) : null}
-          </Box>
-          <Box>
-            <TextField
-              id="outlined-basic"
-              label="Password"
-              name="pass"
-              variant="outlined"
-              value={values.pass}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            {errors.pass && touched.name ? (
-              <p className="form-errors">{errors.pass}</p>
-            ) : null}
-          </Box>
+    <>
+      <h4>
+        13.install Yup. Define a Yup validation schema for a more complex form.
+        Include validation rules for fields like email, password, and phone
+        number. Ensure that error messages are displayed for each validation
+        rule. Implement real-time validation feedback using Material-UI's
+        TextField component. Show validation errors as the user types, and clear
+        the errors when the input is valid.(Use Formik as well)
+      </h4>
+      <FormGroup onSubmit={handleSubmit}>
+        <FormControl>
+          <Box
+            component="form"
+            sx={{
+              "& > :not(style)": { m: 1, width: "25ch" },
+            }}
+            noValidate
+            autoComplete="off"
+          >
+            <Box>
+              <TextField
+                id="outlined-basic"
+                label="UserName"
+                name="name"
+                variant="outlined"
+                value={values.name}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.name && touched.name ? (
+                <p className="form-errors">{errors.name}</p>
+              ) : null}
+            </Box>
+            <Box>
+              <TextField
+                id="outlined-basic"
+                label="Password"
+                name="pass"
+                variant="outlined"
+                value={values.pass}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.pass && touched.name ? (
+                <p className="form-errors">{errors.pass}</p>
+              ) : null}
+            </Box>
 
-          <Box>
-            <TextField
-              id="outlined-basic"
-              label="Confirm Password"
-              name="confirmpassword"
-              variant="outlined"
-              value={values.confpass}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-          </Box>
-          {errors.confirmpassword && touched.name ? (
-            <p className="form-errors">{errors.confirmpassword}</p>
-          ) : null}
-          <Box>
-            <TextField
-              id="outlined-basic"
-              label="EMail"
-              name="email"
-              variant="outlined"
-              value={values.email}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            {errors.email && touched.name ? (
-              <p className="form-errors">{errors.email}</p>
+            <Box>
+              <TextField
+                id="outlined-basic"
+                label="Confirm Password"
+                name="confirmpassword"
+                variant="outlined"
+                value={values.confpass}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+            </Box>
+            {errors.confirmpassword && touched.name ? (
+              <p className="form-errors">{errors.confirmpassword}</p>
             ) : null}
+            <Box>
+              <TextField
+                id="outlined-basic"
+                label="EMail"
+                name="email"
+                variant="outlined"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.email && touched.name ? (
+                <p className="form-errors">{errors.email}</p>
+              ) : null}
+            </Box>
+            <Button type="submit">submit</Button>
           </Box>
-          <Button type="submit">submit</Button>
-        </Box>
-      </FormControl>
-    </FormGroup>
+        </FormControl>
+      </FormGroup>
+    </>
   );
 };
 

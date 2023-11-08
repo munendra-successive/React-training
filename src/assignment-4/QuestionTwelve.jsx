@@ -41,22 +41,28 @@ const data = [
   { id: 9, lastName: "Agarwal", firstName: "Ronit", age: 65 },
 ];
 
-const QuestionTweleve = () => {
+const QuestionTwelve = () => {
   return (
-    <div style={{ height: 400, width: "100%" }}>
-      <DataGrid
-        rows={data}
-        columns={columns}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
-          },
-        }}
-        pageSizeOptions={[5, 10]}
-        checkboxSelection
-      />
-    </div>
+    <>
+      <h4>
+        12.Build a data table using Material-UI's Table component. Populate the
+        table with sample data and add features like sorting and pagination.
+      </h4>
+      <div style={{ height: 400, width: "100%" }}>
+        <DataGrid
+          rows={data}
+          columns={columns}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 5 },
+            },
+          }}
+          pageSizeOptions={[5, 10]}
+          checkboxSelection
+        />
+      </div>
+    </>
   );
 };
 
-export default QuestionTweleve;
+export default QuestionTwelve;

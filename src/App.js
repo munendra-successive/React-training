@@ -1,18 +1,20 @@
 import "./App.css";
-import QuestionEleven from "./assignment-4/QuestionEleven";
-import QuestionTweleve from "./assignment-4/QuestionTweleve";
-import QuestionTen from "./assignment-4/QuestionTen";
-import QuestionTwo from "./assignment-4/QuestionTwo";
-import QuestionOne from "./assignment-4/QusetionOne";
-import QuestionThree from "./assignment-4/QuestionThree";
-import QuestionFour from "./assignment-4/QuestionFour";
-import QuestionFive from "./assignment-4/QuestionFive";
-import QuestionSix from "./assignment-4/QuestionSix";
-import QuestionSeven from "./assignment-4/QuestionSeven";
-import QuestionEight from "./assignment-4/QuestionEight";
-import QuestionNine from "./assignment-4/QuestionNine";
-import QuestionThirteen from "./assignment-4/QuestionThirteen";
-import QuestionFourTeen from "./assignment-4/QuestionFourTeen";
+import {
+  QuestionOne,
+  QuestionTwo,
+  QuestionThree,
+  QuestionFour,
+  QuestionFive,
+  QuestionSix,
+  QuestionSeven,
+  QuestionEight,
+  QuestionNine,
+  QuestionTen,
+  QuestionEleven,
+  QuestionTwelve,
+  QuestionThirteen,
+  QuestionFourTeen,
+} from "./assignment-4";
 
 function App() {
   return (
@@ -42,7 +44,7 @@ function App() {
         <QuestionEight />
       </div>
       <div>
-    <QuestionNine/>
+        <QuestionNine />
       </div>
       <div id="question">
         <QuestionTen />
@@ -51,7 +53,7 @@ function App() {
         <QuestionEleven />
       </div>
       <div id="question">
-        <QuestionTweleve />
+        <QuestionTwelve />
       </div>
       <div id="question">
         <QuestionThirteen />
@@ -59,7 +61,6 @@ function App() {
       <div id="question">
         <QuestionFourTeen />
       </div>
-
     </>
   );
 }

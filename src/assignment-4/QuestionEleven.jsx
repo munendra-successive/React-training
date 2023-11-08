@@ -33,7 +33,14 @@ const QuestionEleven = () => {
 
   return (
     <div>
-      <Button onClick={handleOpen} variant="contained">Open modal</Button>
+      <h4>
+        11.Design a modal dialog component using Material-UI's Dialog component.
+        Use it to display additional information or capture user input within
+        your app.
+      </h4>
+      <Button onClick={handleOpen} variant="contained">
+        Open modal
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -45,7 +52,8 @@ const QuestionEleven = () => {
             Enter Your Name
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Hi<span style={{fontWeight:'bold'}}> {name} </span> Welcome to modal dialog component
+            Hi<span style={{ fontWeight: "bold" }}> {name} </span> Welcome to
+            modal dialog component
           </Typography>
           <TextField
             onChange={(e) => {

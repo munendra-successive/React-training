@@ -28,6 +28,12 @@ const QuestionTwo = () => {
 
   return (
     <>
+      <h4>
+        2.Build a form that includes various input fields like text inputs,
+        checkboxes, and radio buttons. Ensure that each input is a controlled
+        component. When the user submits the form, log the form data to the
+        console.
+      </h4>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -59,7 +65,9 @@ const QuestionTwo = () => {
           checked={details.gender === "female"}
           onChange={handleChange}
         />
-        <button type="submit" onClick={handleSubmit}>Submit</button>
+        <button type="submit" onClick={handleSubmit}>
+          Submit
+        </button>
       </form>
     </>
   );

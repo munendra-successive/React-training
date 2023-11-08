@@ -17,10 +17,10 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { useState } from "react";
-import Home from "./QuestionNine/Home";
-import About from "./QuestionNine/About";
-import Contact from "./QuestionNine/Contact";
-import Service from "./QuestionNine/Service";
+import Home from "./Home";
+import About from "./About";
+import Contact from "./Contact";
+import Service from "./Service";
 import { AiFillHome } from "react-icons/ai";
 import { FcAbout } from "react-icons/fc";
 import { FcBusinessContact } from "react-icons/fc";
@@ -107,7 +107,12 @@ const QuestionNine = () => {
   };
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "center"}}>
+      <h4>
+        9.Implement a responsive sidebar navigation using Material-UI's Drawer
+        component. Include links that allow users to navigate between different
+        sections of your web app.
+      </h4>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <button
           onClick={(e) => {
             setShow(!isShow);

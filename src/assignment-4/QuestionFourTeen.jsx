@@ -27,81 +27,89 @@ const QuestionFourTeen = () => {
         action.resetForm();
       },
     });
-const[isSubmit,setSubmit]=useState(true);
-useEffect(()=>{
-    if(Object.keys(errors).length>0){
-        setSubmit(true)
+  const [isSubmit, setSubmit] = useState(true);
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      setSubmit(true);
+    } else {
+      setSubmit(false);
     }
-    else{
-        setSubmit(false)
-    }
-},[errors])
+  }, [errors]);
   return (
-    <FormGroup onSubmit={handleSubmit}>
-      <FormControl>
-        <Box
-          component="form"
-          sx={{
-            "& > :not(style)": { m: 1, width: "25ch" },
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <Box>
-            <TextField
-              id="outlined-basic"
-              label="UserName"
-              name="name"
-              variant="outlined"
-              value={values.name}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            {errors.name && touched.name ? <p>{errors.name}</p> : null}
-          </Box>
-          <Box>
-            <TextField
-              id="outlined-basic"
-              label="Password"
-              name="pass"
-              variant="outlined"
-              value={values.pass}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            {errors.pass && touched.name ? <p>{errors.pass}</p> : null}
-          </Box>
+    <>
+      <h4>
+        14.Create a new form and Implement form submission handling. Ensure that
+        the form cannot be submitted if there are validation errors. Display a
+        summary of errors if the user attempts to submit an invalid form.
+      </h4>
+      <FormGroup onSubmit={handleSubmit}>
+        <FormControl>
+          <Box
+            component="form"
+            sx={{
+              "& > :not(style)": { m: 1, width: "25ch" },
+            }}
+            noValidate
+            autoComplete="off"
+          >
+            <Box>
+              <TextField
+                id="outlined-basic"
+                label="UserName"
+                name="name"
+                variant="outlined"
+                value={values.name}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.name && touched.name ? <p>{errors.name}</p> : null}
+            </Box>
+            <Box>
+              <TextField
+                id="outlined-basic"
+                label="Password"
+                name="pass"
+                variant="outlined"
+                value={values.pass}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.pass && touched.name ? <p>{errors.pass}</p> : null}
+            </Box>
 
-          <Box>
-            <TextField
-              id="outlined-basic"
-              label="Confirm Password"
-              name="confirmpassword"
-              variant="outlined"
-              value={values.confirmpassword}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
+            <Box>
+              <TextField
+                id="outlined-basic"
+                label="Confirm Password"
+                name="confirmpassword"
+                variant="outlined"
+                value={values.confirmpassword}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+            </Box>
+            {errors.confirmpassword && touched.name ? (
+              <p>{errors.confirmpassword}</p>
+            ) : null}
+            <Box>
+              <TextField
+                id="outlined-basic"
+                label="EMail"
+                name="email"
+                variant="outlined"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.email && touched.name ? <p>{errors.email}</p> : null}
+            </Box>
+            <Button type="submit" disabled={isSubmit}>
+              submit
+            </Button>
           </Box>
-          {errors.confirmpassword && touched.name ? <p>{errors.confirmpassword}</p> : null}
-          <Box>
-            <TextField
-              id="outlined-basic"
-              label="EMail"
-              name="email"
-              variant="outlined"
-              value={values.email}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            {errors.email && touched.name ? <p>{errors.email}</p> : null}
-          </Box>
-          <Button type="submit" disabled={isSubmit}>
-            submit
-          </Button>
-        </Box>
-      </FormControl>
-    </FormGroup>
+        </FormControl>
+      </FormGroup>
+    </>
   );
 };
 

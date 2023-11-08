@@ -25,6 +25,8 @@ import {
   UseLocal,
   CountDownTimer,
 } from "./assignment-2";
+import { AboutFour, AboutThree, ChildTwo, ErrorFour, ErrorThree, HomeFour, HomeSix, HomeThree, NavbarFour, NavbarThree, ParentTwo, ProductDetail, ServiceFour } from "./assignment-3";
+import { UserAuth } from "./assignment-3/Question-2/Parent";
 
 function App() {
   const [login, setLogin] = useState(false);

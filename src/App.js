@@ -38,9 +38,6 @@ function App() {
       {/* Question - 1 */}
 
       <div id="question">
-<<<<<<< HEAD
-        <ParentOne>{<ChildOne />}</ParentOne>
-=======
         <Counter />
       </div>
       <div id="question">
@@ -87,7 +84,6 @@ function App() {
       </div>
       <div id="question">
         <List />
->>>>>>> 8b5c01960a7a2faa2671fddb2e47c02ec051a36d
       </div>
 
       {/* Question - 2 */}
@@ -148,40 +144,7 @@ function App() {
       {/* Question - 5 */}
 
       <div id="question">
-<<<<<<< HEAD
-        <h4>
-          5.Extend the application to include nested routes for a more complex
-          user interface. Create a new section of your application (e.g., a
-          Dashboard) with multiple sub-pages (e.g., Dashboard, Profile,
-          Settings). Implement nested routing within this section using nested
-          routes. Add navigation links to switch between the sub-pages within
-          the Dashboard section. Customize the content displayed on each
-          sub-page.
-        </h4>
-        <UserAuth.Provider
-          value={{
-            login,
-            setLogin,
-            username,
-            setUsername,
-            password,
-            setPassword,
-          }}
-        >
-          <NavbarFive />
-          <Routes>
-            <Route path="/homefive" element={<HomeFive />} />
-            <Route path="/aboutfive" element={<AboutFive />} />
-            <Route path="/servicefive" element={<ServiceFive />} />
-            <Route path="*" element={<ErrorFive />} />
-            <Route path="/dashboardfive" element={<DashboardFive />} />
-            <Route path="/dashboardfive/profile" element={<ProfileFive />} />
-            <Route path="/dashboardfive/setting" element={<SettingFive />} />
-          </Routes>
-        </UserAuth.Provider>
-=======
         <UseLocal />
->>>>>>> 8b5c01960a7a2faa2671fddb2e47c02ec051a36d
       </div>
 
       {/* Question - 6 */}

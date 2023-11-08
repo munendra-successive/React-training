@@ -1,5 +1,4 @@
-import { useState, useContext, createContext } from "react";
-import CartProvider from "./CartProvider";
+import { useState, createContext } from "react";
 
 /*
 
@@ -11,7 +10,7 @@ Allow users to add and remove items from the cart.
 Display the total price of items in the cart.
 
 */
-export const UserCart = createContext();
+export const CartContext = createContext();
 
 const products = [
   {
@@ -27,10 +26,10 @@ const products = [
     price: 150,
   },
 ];
-const Shoping = () => {
+const ShopProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  const addItem = (item) => {
+  const handleAddItem = (item) => {
     setCart([
       ...cart,
       {
@@ -42,7 +41,7 @@ const Shoping = () => {
     ]);
   };
 
-  const Delete = (id) => {
+  const handleDeleteItem = (id) => {
     const updatedItem = cart.filter((item) => item.id !== id);
     setCart(updatedItem);
   };
@@ -56,11 +55,11 @@ const Shoping = () => {
         the cart state and update it. Allow users to add and remove items from
         the cart. Display the total price of items in the cart.
       </h4>
-      <UserCart.Provider value={{ cart, setCart, products, addItem, Delete }}>
-        <CartProvider />
-      </UserCart.Provider>
+      <CartContext.Provider value={{ cart, setCart, products, handleAddItem, handleDeleteItem }}>
+        {children}
+      </CartContext.Provider>
     </>
   );
 };
 
-export default Shoping;
+export default ShopProvider;

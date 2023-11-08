@@ -1,8 +1,8 @@
-import { useContext, useState } from "react";
-import { UserCart } from "./Shoping";
+import { useContext} from "react";
+import { CartContext } from "./ShopProvider";
 
-const CartProvider=()=>{
-    const{cart,setCart,products,addItem,Delete}=useContext(UserCart);
+const ShoppingCart=()=>{
+    const{cart,products,handleAddItem,handleDeleteItem}=useContext(CartContext);
 
     return(
         <>
@@ -18,7 +18,7 @@ const CartProvider=()=>{
                 <td>{item.name}</td>
                 <td>{item.price}</td>
                 <td>{item.quantity}</td>
-                <td><button onClick={()=>{addItem(item)}}>Add</button></td>
+                <td><button onClick={()=>{handleAddItem(item)}}>Add</button></td>
                 </tr>
             ))}
         </table>
@@ -34,7 +34,7 @@ const CartProvider=()=>{
                 <td>{item.name}</td>
                 <td>{item.price}</td>
                 <td>{item.quantity}</td>
-                <td><button onClick={()=>{Delete(item.id)}}>Delete</button></td>
+                <td><button onClick={()=>{handleDeleteItem(item.id)}}>Delete</button></td>
                 </tr>
             ))}
             <p>Total: {cart===null ? 0 :cart.reduce((acc,item)=>acc+item.price,0)}</p>
@@ -44,4 +44,4 @@ const CartProvider=()=>{
     
 }
 
-export default CartProvider;
+export default ShoppingCart;

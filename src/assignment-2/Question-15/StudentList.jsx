@@ -13,8 +13,9 @@ const students = ["Mohit", "Monu"];
 const StudentList = () => {
   const [names, setNames] = useState(students);
   const [newName, setNewName] = useState("");
-  useMemo(() => names, [names]);
+  const changedNames=useMemo(() => names, [names]);
   const addStudent = () => {
+    if(newName)
     setNames([...names, newName]);
   };
   return (
@@ -27,7 +28,7 @@ const StudentList = () => {
         that, when clicked, appends a new student name to the list.
       </h4>
       <ul>
-        {names.map((student) => (
+        {changedNames.map((student) => (
           <li>{student}</li>
         ))}
       </ul>

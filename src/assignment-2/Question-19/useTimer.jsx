@@ -1,43 +1,46 @@
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react";
 
-const useTimer=(duration)=>{
-   const [timerValue,setTimerValue]=useState(duration);
-   const[isActive,setActive]=useState(false)
-   const startTimer=()=>{
-        setActive(true)
-   }
+function useTimer(duration) {
+  const [timer, setTimer] = useState(duration);
+  const [isActive, setActive] = useState(false);
 
-   const pauseTimer=()=>{
+  const startTimer = () => {
+    setActive(true);
+  };
+
+  const pauseTimer = () => {
     setActive(false);
-   }
-   const reset=()=>{
-    setActive(false)
-    setTimerValue(duration);
-   }
-   
-   useEffect(()=>()=>{
+  };
+
+  const reset = () => {
+    setActive(false);
+    setTimer(duration);
+  };
+
+  useEffect(() => {
     let interval;
-    if(isActive){
-        interval=setInterval(()=>{
-            setTimerValue((prevTimer)=>{
-                if(prevTimer===0){
-                    clearInterval(interval);
-                    setActive(false);
-                    return 0;
-                }
-                else{
-                    return prevTimer-1
-                }
-                
-            })
-        },1000)
-    }else{
-        clearInterval(interval);
+    if (isActive) {
+      interval = setInterval(() => {
+        setTimer((prevTimer) => {
+          if (prevTimer <= 0) {
+            clearInterval(interval);
+            setActive(false);
+            return 0;
+          }
+          return prevTimer - 1;
+        });
+      }, 1000);
     }
-    return ()=>clearInterval(interval);
-   },[isActive,duration])
 
-   return[timerValue,startTimer,pauseTimer,reset,isActive];
+    return () => clearInterval(interval);
+  }, [isActive, duration]);
+
+  return {
+    timer,
+    isActive,
+    startTimer,
+    pauseTimer,
+    reset,
+  };
 }
-
 export default useTimer;

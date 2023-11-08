@@ -35,7 +35,7 @@ const Notification = () => {
       <input
         type="text"
         placeholder="Message"
-        onKeyPress={(e) => {
+        onChange={(e) => {
           setMessage(e.target.value);
         }}
       ></input>

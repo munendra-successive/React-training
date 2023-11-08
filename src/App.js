@@ -2,32 +2,29 @@ import { Link, Route, Routes } from "react-router-dom";
 import { useState, createContext } from "react";
 import "./App.css";
 import {
-  ParentOne,
-  ChildOne,
-  ParentTwo,
-  ChildTwo,
-  HomeThree,
-  ErrorThree,
-  AboutThree,
-  NavbarThree,
-  AboutFour,
-  ErrorFour,
-  HomeFour,
-  NavbarFour,
-  ServiceFour,
-  AboutFive,
-  DashboardFive,
-  ErrorFive,
-  HomeFive,
-  NavbarFive,
-  ProfileFive,
-  ServiceFive,
-  SettingFive,
-  HomeSix,
-  ProductDetail,
-} from "./assignment-3";
-
-export const UserAuth = createContext();
+  Counter,
+  PersonForm,
+  ToDoList,
+  RandomNumberGenerator,
+  CounterWithStep,
+  Clock,
+  Notification,
+  SlideShow,
+  QuestionNine,
+  ThemeProvider,
+  LanguageProvider,
+  QuestionTen,
+  ShopProvider,
+  ShoppingCart,
+  Voting,
+  Parent,
+  List,
+  StudentList,
+  EmployeeSalary,
+  CopyButton,
+  UseLocal,
+  CountDownTimer,
+} from "./assignment-2";
 
 function App() {
   const [login, setLogin] = useState(false);
@@ -41,7 +38,56 @@ function App() {
       {/* Question - 1 */}
 
       <div id="question">
+<<<<<<< HEAD
         <ParentOne>{<ChildOne />}</ParentOne>
+=======
+        <Counter />
+      </div>
+      <div id="question">
+        <PersonForm />
+      </div>
+      <div id="question">
+        <ToDoList />
+      </div>
+      <div id="question">
+        <RandomNumberGenerator />
+      </div>
+      <div id="question">
+        <CounterWithStep />
+      </div>
+      <div id="question">
+        <Clock />
+      </div>
+      <div id="question">
+        <Notification />
+      </div>
+      <div id="question">
+        <SlideShow />
+      </div>
+      <div id="question">
+        <ThemeProvider>
+          <QuestionNine />
+        </ThemeProvider>
+      </div>
+      <div id="question">
+        <LanguageProvider>
+          <QuestionTen />
+        </LanguageProvider>
+      </div>
+      <div id="question">
+        <ShopProvider>
+          <ShoppingCart />
+        </ShopProvider>
+      </div>
+      <div id="question">
+        <Voting />
+      </div>
+      <div id="question">
+        <Parent />
+      </div>
+      <div id="question">
+        <List />
+>>>>>>> 8b5c01960a7a2faa2671fddb2e47c02ec051a36d
       </div>
 
       {/* Question - 2 */}
@@ -102,6 +148,7 @@ function App() {
       {/* Question - 5 */}
 
       <div id="question">
+<<<<<<< HEAD
         <h4>
           5.Extend the application to include nested routes for a more complex
           user interface. Create a new section of your application (e.g., a
@@ -132,6 +179,9 @@ function App() {
             <Route path="/dashboardfive/setting" element={<SettingFive />} />
           </Routes>
         </UserAuth.Provider>
+=======
+        <UseLocal />
+>>>>>>> 8b5c01960a7a2faa2671fddb2e47c02ec051a36d
       </div>
 
       {/* Question - 6 */}
@@ -154,5 +204,4 @@ function App() {
     </>
   );
 }
-
 export default App;

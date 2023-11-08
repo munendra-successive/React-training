@@ -1,33 +1,38 @@
 import { Link, Route, Routes } from "react-router-dom";
-import { useState} from "react";
+import { useState, createContext } from "react";
 import "./App.css";
 import {
-  Counter,
-  PersonForm,
-  ToDoList,
-  RandomNumberGenerator,
-  CounterWithStep,
-  Clock,
-  Notification,
-  SlideShow,
-  QuestionNine,
-  ThemeProvider,
-  LanguageProvider,
-  QuestionTen,
-  ShopProvider,
-  ShoppingCart,
-  Voting,
-  Parent,
-  List,
+  ParentOne,
+  ChildOne,
+  ParentTwo,
+  ChildTwo,
+  HomeThree,
+  ErrorThree,
+  AboutThree,
+  NavbarThree,
+  AboutFour,
+  ErrorFour,
+  HomeFour,
+  NavbarFour,
+  ServiceFour,
+  AboutFive,
+  DashboardFive,
+  ErrorFive,
+  HomeFive,
+  NavbarFive,
+  ProfileFive,
+  ServiceFive,
+  SettingFive,
+  HomeSix,
+  ProductDetail,
+} from "./assignment-3";
 
-  UseLocal,
-
-} from "./assignment-2";
-import { AboutFour, AboutThree, ChildTwo, ErrorFour, ErrorThree, HomeFour, HomeSix, HomeThree, NavbarFour, NavbarThree, ParentTwo, ProductDetail, ServiceFour } from "./assignment-3";
-import { UserAuth } from "./assignment-3/Question-2/Parent";
+export const UserAuth = createContext();
 
 function App() {
-
+  const [login, setLogin] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [loginfour, setLoginFour] = useState(false);
   const [usernamefour, setUsernameFour] = useState("");
   const [passwordfour, setPasswordFour] = useState("");
@@ -36,52 +41,7 @@ function App() {
       {/* Question - 1 */}
 
       <div id="question">
-        <Counter />
-      </div>
-      <div id="question">
-        <PersonForm />
-      </div>
-      <div id="question">
-        <ToDoList />
-      </div>
-      <div id="question">
-        <RandomNumberGenerator />
-      </div>
-      <div id="question">
-        <CounterWithStep />
-      </div>
-      <div id="question">
-        <Clock />
-      </div>
-      <div id="question">
-        <Notification />
-      </div>
-      <div id="question">
-        <SlideShow />
-      </div>
-      <div id="question">
-        <ThemeProvider>
-          <QuestionNine />
-        </ThemeProvider>
-      </div>
-      <div id="question">
-        <LanguageProvider>
-          <QuestionTen />
-        </LanguageProvider>
-      </div>
-      <div id="question">
-        <ShopProvider>
-          <ShoppingCart />
-        </ShopProvider>
-      </div>
-      <div id="question">
-        <Voting />
-      </div>
-      <div id="question">
-        <Parent />
-      </div>
-      <div id="question">
-        <List />
+        <ParentOne>{<ChildOne />}</ParentOne>
       </div>
 
       {/* Question - 2 */}
@@ -142,7 +102,36 @@ function App() {
       {/* Question - 5 */}
 
       <div id="question">
-        <UseLocal />
+        <h4>
+          5.Extend the application to include nested routes for a more complex
+          user interface. Create a new section of your application (e.g., a
+          Dashboard) with multiple sub-pages (e.g., Dashboard, Profile,
+          Settings). Implement nested routing within this section using nested
+          routes. Add navigation links to switch between the sub-pages within
+          the Dashboard section. Customize the content displayed on each
+          sub-page.
+        </h4>
+        <UserAuth.Provider
+          value={{
+            login,
+            setLogin,
+            username,
+            setUsername,
+            password,
+            setPassword,
+          }}
+        >
+          <NavbarFive />
+          <Routes>
+            <Route path="/homefive" element={<HomeFive />} />
+            <Route path="/aboutfive" element={<AboutFive />} />
+            <Route path="/servicefive" element={<ServiceFive />} />
+            <Route path="*" element={<ErrorFive />} />
+            <Route path="/dashboardfive" element={<DashboardFive />} />
+            <Route path="/dashboardfive/profile" element={<ProfileFive />} />
+            <Route path="/dashboardfive/setting" element={<SettingFive />} />
+          </Routes>
+        </UserAuth.Provider>
       </div>
 
       {/* Question - 6 */}
@@ -165,4 +154,5 @@ function App() {
     </>
   );
 }
+
 export default App;

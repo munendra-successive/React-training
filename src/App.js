@@ -1,5 +1,5 @@
 import { Link, Route, Routes } from "react-router-dom";
-import { useState, createContext } from "react";
+import { useState} from "react";
 import "./App.css";
 import {
   Counter,
@@ -19,19 +19,15 @@ import {
   Voting,
   Parent,
   List,
-  StudentList,
-  EmployeeSalary,
-  CopyButton,
+
   UseLocal,
-  CountDownTimer,
+
 } from "./assignment-2";
 import { AboutFour, AboutThree, ChildTwo, ErrorFour, ErrorThree, HomeFour, HomeSix, HomeThree, NavbarFour, NavbarThree, ParentTwo, ProductDetail, ServiceFour } from "./assignment-3";
 import { UserAuth } from "./assignment-3/Question-2/Parent";
 
 function App() {
-  const [login, setLogin] = useState(false);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+
   const [loginfour, setLoginFour] = useState(false);
   const [usernamefour, setUsernameFour] = useState("");
   const [passwordfour, setPasswordFour] = useState("");

@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
-import { UserAuthenticate } from "./Parent";
+import { UserAuthContext } from "./Parent";
 
 const Child = () => {
-  const { setLogin, islogin, userDetails } = useContext(UserAuthenticate);
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+  const { setLogin, islogin, userDetails } = useContext(UserAuthContext);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleClick = () => {
     if (userDetails.name === username && userDetails.pass === password) {

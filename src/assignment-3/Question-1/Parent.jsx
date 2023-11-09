@@ -10,7 +10,7 @@ how "Welcome, [username]!" Otherwise, display "Please log in."
 
 */
 
-export const UserAuthenticate = createContext();
+export const UserAuthContext = createContext();
 const Parent = ({ children }) => {
   const [islogin, setLogin] = useState(false);
   const userDetails = {
@@ -20,9 +20,9 @@ const Parent = ({ children }) => {
 
   return (
     <>
-      <UserAuthenticate.Provider value={{ islogin, setLogin, userDetails }}>
+      <UserAuthContext.Provider value={{ islogin, setLogin, userDetails }}>
         {children}
-      </UserAuthenticate.Provider>
+      </UserAuthContext.Provider>
     </>
   );
 };

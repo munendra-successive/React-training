@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
-import { UserAuth, UserPref } from "./Parent";
+import { UserAuthContext, UserPrefContext } from "./Parent";
 
 const Child = () => {
-  const { setLogin, islogin, userDetails } = useContext(UserAuth);
-  const { styles, theme, handleClickPref } = useContext(UserPref);
+  const { setLogin, islogin, userDetails } = useContext(UserAuthContext);
+  const { styles, theme, handleClickPref } = useContext(UserPrefContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 

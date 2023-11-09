@@ -28,11 +28,11 @@ const EmployeeSalary = () => {
   }, [empData]);
 
   const changeData = () => {
-    const upData = empData.map((emp) => ({
+    const updatedData = empData.map((emp) => ({
       ...emp,
       salary: emp.salary + 1000,
     }));
-    setEmpData(upData);
+    setEmpData(updatedData);
   };
 
   return (

@@ -15,6 +15,7 @@ const ToDoList = () => {
   const [newTodo, setNewToDo] = useState("");
 
   const addToDo = () => {
+    if(newTodo)
     setTodos([...todos, { text: newTodo, completed: false }]);
     setNewToDo("");
   };

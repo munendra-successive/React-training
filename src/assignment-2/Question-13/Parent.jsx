@@ -15,11 +15,11 @@ import Child from "./Child";
 const Parent = () => {
   const [count, setCount] = useState(0);
 
-  const Reset = useCallback(() => {
-    setCount(0);
-  }, [count]);
+  const Reset = ()=>{
+    setCount(0)
+  }
 
-  const IncrementCount = useCallback(() => {
+  const handleIncrementCount = useCallback(() => {
     setCount(count + 1);
   }, [count]);
 
@@ -33,7 +33,7 @@ const Parent = () => {
         Display the count in the Child component. Implement a button in the
         Child component that resets the count to zero when clicked.
       </h4>
-      <Child increment={IncrementCount} count={count} reset={Reset} />
+      <Child increment={handleIncrementCount} count={count} reset={Reset} />
     </>
   );
 };

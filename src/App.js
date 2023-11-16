@@ -27,7 +27,7 @@ import {
   ProductDetail,
 } from "./assignment-3";
 
-export const UserAuth = createContext();
+export const UserAuthContext = createContext();
 
 function App() {
   const [login, setLogin] = useState(false);
@@ -79,7 +79,7 @@ function App() {
           users to the login page. Display a message on the Home page welcoming
           the authenticated user.
         </h4>
-        <UserAuth.Provider
+        <UserAuthContext.Provider
           value={{
             loginfour,
             setLoginFour,
@@ -96,7 +96,7 @@ function App() {
             <Route path="/servicefour" element={<ServiceFour />} />
             <Route path="*" element={<ErrorFour />} />
           </Routes>
-        </UserAuth.Provider>
+        </UserAuthContext.Provider>
       </div>
 
       {/* Question - 5 */}
@@ -111,7 +111,7 @@ function App() {
           the Dashboard section. Customize the content displayed on each
           sub-page.
         </h4>
-        <UserAuth.Provider
+        <UserAuthContext.Provider
           value={{
             login,
             setLogin,
@@ -131,7 +131,7 @@ function App() {
             <Route path="/dashboardfive/profile" element={<ProfileFive />} />
             <Route path="/dashboardfive/setting" element={<SettingFive />} />
           </Routes>
-        </UserAuth.Provider>
+        </UserAuthContext.Provider>
       </div>
 
       {/* Question - 6 */}

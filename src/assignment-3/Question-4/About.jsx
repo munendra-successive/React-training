@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { UserAuth } from "../../App";
+import { UserAuthContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 
 const About = () => {
-  const { loginfour } = useContext(UserAuth);
+  const { loginfour } = useContext(UserAuthContext);
   const navigate=useNavigate()
   return (
     <>

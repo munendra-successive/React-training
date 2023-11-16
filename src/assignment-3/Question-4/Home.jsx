@@ -12,7 +12,7 @@ Display a message on the Home page welcoming the authenticated user.
 import React, { useContext } from "react";
 
 import { useNavigate } from "react-router-dom";
-import { UserAuth } from "../../App";
+import { UserAuthContext } from "../../App";
 const Home = () => {
   const navigate = useNavigate();
   const {loginfour,
@@ -21,7 +21,7 @@ const Home = () => {
     setUsernameFour,
     passwordfour,
     setPasswordFour, } =
-    useContext(UserAuth);
+    useContext(UserAuthContext);
 
   const handleClick = () => {
     if (usernamefour === "Monu" && passwordfour === "Monu@123") {

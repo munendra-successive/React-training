@@ -11,11 +11,11 @@ Customize the content displayed on each sub-page.
 import React, { useContext } from "react";
 
 import { useNavigate } from "react-router-dom";
-import { UserAuth } from "../../App";
+import { UserAuthContext } from "../../App";
 const Home = () => {
   const navigate = useNavigate();
   const { login, setLogin, username, setUsername, password, setPassword } =
-    useContext(UserAuth);
+    useContext(UserAuthContext);
 
   const handleClick = () => {
     if (username === "Monu" && password === "Monu@123") {

@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { UserAuth } from "../../App";
+import { UserAuthContext } from "../../App";
 
 const Navbar = () => {
-  const { loginfour, setLoginFour } = useContext(UserAuth);
+  const { loginfour, setLoginFour } = useContext(UserAuthContext);
   return (
     <>
       <nav>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { UserAuthContext } from "../../App";
 
 const Navbar = () => {
-  const { loginfour, setLoginFour } = useContext(UserAuthContext);
+  const { loginfour, setLoginFour, setText } = useContext(UserAuthContext);
   return (
     <>
       <nav>
@@ -11,7 +11,13 @@ const Navbar = () => {
         <Link to="/aboutfour">About Page</Link>
         <Link to="/servicefour">Service</Link>
         {loginfour ? (
-          <Link onClick={() => setLoginFour(false)} to="/homefour">
+          <Link
+            onClick={() => {
+              setLoginFour(false);
+              setText("Please Login");
+            }}
+            to="/homefour"
+          >
             Log out
           </Link>
         ) : (

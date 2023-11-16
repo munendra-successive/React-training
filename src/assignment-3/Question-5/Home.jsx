@@ -14,13 +14,17 @@ import { useNavigate } from "react-router-dom";
 import { UserAuthContext } from "../../App";
 const Home = () => {
   const navigate = useNavigate();
-  const { login, setLogin, username, setUsername, password, setPassword } =
+  const { login, setLogin, username, setUsername, password, setPassword,text,setText } =
     useContext(UserAuthContext);
 
-  const handleClick = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (username === "Monu" && password === "Monu@123") {
       setLogin(true);
       navigate("/homefive");
+    }
+    else{
+      setText("Invalid Username or Password")
     }
   };
 
@@ -31,6 +35,8 @@ const Home = () => {
           <h4>Welcome {username} </h4>
         ) : (
           <div>
+          <p>{text}</p>
+          <form onSubmit={handleSubmit}>
             <input
               type="text"
               onChange={(e) => setUsername(e.target.value)}
@@ -43,7 +49,8 @@ const Home = () => {
               value={password}
               placeholder="Enter Password"
             ></input>
-            <button onClick={handleClick}>Login</button>
+            <button type="submit">Login</button>
+            </form>
           </div>
         )}
       </p>

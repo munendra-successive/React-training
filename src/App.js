@@ -36,6 +36,7 @@ function App() {
   const [loginfour, setLoginFour] = useState(false);
   const [usernamefour, setUsernameFour] = useState("");
   const [passwordfour, setPasswordFour] = useState("");
+  const[text,setText]=useState("Please Login")
   return (
     <>
       {/* Question - 1 */}
@@ -87,6 +88,8 @@ function App() {
             setUsernameFour,
             passwordfour,
             setPasswordFour,
+            text,
+            setText,
           }}
         >
           <NavbarFour />
@@ -119,6 +122,8 @@ function App() {
             setUsername,
             password,
             setPassword,
+            text,
+            setText,
           }}
         >
           <NavbarFive />

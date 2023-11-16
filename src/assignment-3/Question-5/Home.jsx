@@ -11,16 +11,27 @@ Customize the content displayed on each sub-page.
 import React, { useContext } from "react";
 
 import { useNavigate } from "react-router-dom";
-import { UserAuth } from "../../App";
+import { UserAuthContext } from "../../App";
 const Home = () => {
   const navigate = useNavigate();
-  const { login, setLogin, username, setUsername, password, setPassword } =
-    useContext(UserAuth);
+  const {
+    login,
+    setLogin,
+    username,
+    setUsername,
+    password,
+    setPassword,
+    text,
+    setText,
+  } = useContext(UserAuthContext);
 
-  const handleClick = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (username === "Monu" && password === "Monu@123") {
       setLogin(true);
       navigate("/homefive");
+    } else if (username && password) {
+      setText("Invalid Username or Password");
     }
   };
 
@@ -31,19 +42,22 @@ const Home = () => {
           <h4>Welcome {username} </h4>
         ) : (
           <div>
-            <input
-              type="text"
-              onChange={(e) => setUsername(e.target.value)}
-              value={username}
-              placeholder="Enter Username"
-            ></input>
-            <input
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-              placeholder="Enter Password"
-            ></input>
-            <button onClick={handleClick}>Login</button>
+            <p>{text}</p>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                onChange={(e) => setUsername(e.target.value)}
+                value={username}
+                placeholder="Enter Username"
+              ></input>
+              <input
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                placeholder="Enter Password"
+              ></input>
+              <button type="submit">Login</button>
+            </form>
           </div>
         )}
       </p>

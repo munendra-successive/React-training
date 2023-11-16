@@ -9,7 +9,7 @@ const ProductDetail = () => {
 
       {ProdDesc.map((item) => (
         <div>
-          {item.id == id ? (
+          {item.id === Number(id) ? (
             <div>
               <div>Outlet: {item.outlet}</div>
               <div>Product Name: {item.name}</div>

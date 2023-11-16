@@ -1,14 +1,18 @@
 import { useContext, useState } from "react";
-import { UserAuthenticate } from "./Parent";
+import { UserAuthContext } from "./Parent";
 
 const Child = () => {
-  const { setLogin, islogin, userDetails } = useContext(UserAuthenticate);
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+  const { setLogin, islogin, userDetails } = useContext(UserAuthContext);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [text, setText] = useState("Please Login");
 
-  const handleClick = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (userDetails.name === username && userDetails.pass === password) {
       setLogin(true);
+    } else {
+      setText("Invalid Username or Password");
     }
   };
 
@@ -29,27 +33,31 @@ const Child = () => {
           Welcome <h3>{username}</h3>
         </p>
       ) : (
-        <p>Please Log In</p>
+        <>
+          <p>{text}</p>
+          <form onSubmit={handleSubmit}>
+            <label>Username </label>
+            <input
+              type="text"
+              name={username}
+              required
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
+            />
+            <label>Password </label>
+            <input
+              type="password"
+              name={password}
+              required
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
+            <button type="submit">Login</button>
+          </form>
+        </>
       )}
-      <label>Username </label>
-      <input
-        type="text"
-        name={username}
-        required
-        onChange={(e) => {
-          setUsername(e.target.value);
-        }}
-      />
-      <label>Password </label>
-      <input
-        type="password"
-        name={password}
-        required
-        onChange={(e) => {
-          setPassword(e.target.value);
-        }}
-      />
-      <button onClick={handleClick}>Login</button>
     </>
   );
 };

@@ -1,15 +1,19 @@
 import { useContext, useState } from "react";
-import { UserAuth, UserPref } from "./Parent";
+import { UserAuthContext, UserPrefContext } from "./Parent";
 
 const Child = () => {
-  const { setLogin, islogin, userDetails } = useContext(UserAuth);
-  const { styles, theme, handleClickPref } = useContext(UserPref);
+  const { setLogin, islogin, userDetails } = useContext(UserAuthContext);
+  const { styles, theme, handleClickPref } = useContext(UserPrefContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [text, setText] = useState("Please Login");
 
-  const handleClick = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (userDetails.name === username && userDetails.pass === password) {
       setLogin(true);
+    } else {
+      setText("Invalid username or password");
     }
   };
 
@@ -30,27 +34,31 @@ const Child = () => {
             Welcome <h3>{username}</h3>
           </p>
         ) : (
-          <p>Please Log In</p>
+          <>
+            <p>{text}</p>
+            <form onSubmit={handleSubmit}>
+              <label>Username </label>
+              <input
+                type="text"
+                name={username}
+                required
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                }}
+              />
+              <label>Password </label>
+              <input
+                type="password"
+                name={password}
+                required
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
+              <button type="submit">Login</button>
+            </form>
+          </>
         )}
-        <label>Username </label>
-        <input
-          type="text"
-          name={username}
-          required
-          onChange={(e) => {
-            setUsername(e.target.value);
-          }}
-        />
-        <label>Password </label>
-        <input
-          type="password"
-          name={password}
-          required
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />
-        <button onClick={handleClick}>Login</button>
       </div>
       <div>
         <button onClick={handleClickPref}>Change Theme</button>

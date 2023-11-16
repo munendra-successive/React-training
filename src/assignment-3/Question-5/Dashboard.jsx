@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { UserAuth } from "../../App";
+import { UserAuthContext } from "../../App";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-  const { login } = useContext(UserAuth);
+  const { login } = useContext(UserAuthContext);
   const navigate = useNavigate();
   return (
     <>

@@ -1,17 +1,23 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { UserAuth } from "../../App";
+import { UserAuthContext } from "../../App";
 
 const Navbar = () => {
-  const { login, setLogin } = useContext(UserAuth);
+  const { loginfour, setLoginFour, setText } = useContext(UserAuthContext);
   return (
     <>
       <nav>
         <Link to="/homefour">Home Page</Link>
         <Link to="/aboutfour">About Page</Link>
         <Link to="/servicefour">Service</Link>
-        {login ? (
-          <Link onClick={() => setLogin(false)} to="/">
+        {loginfour ? (
+          <Link
+            onClick={() => {
+              setLoginFour(false);
+              setText("Please Login");
+            }}
+            to="/homefour"
+          >
             Log out
           </Link>
         ) : (

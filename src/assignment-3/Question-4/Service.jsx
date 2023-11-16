@@ -1,16 +1,16 @@
 import React from "react";
 import { useContext } from "react";
-import { UserAuth } from "../../App";
+import { UserAuthContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 
 
 const Service=()=>{
-    const { login } = useContext(UserAuth);
+    const { loginfour } = useContext(UserAuthContext);
     const navigate=useNavigate()
 
     return(
         <>
-        {login ? <div>This Service Page</div>:<div><button onClick={()=>navigate("/")}>Please LogIn</button></div>}
+        {loginfour ? <div>This Service Page</div>:<div><button onClick={()=>navigate("/")}>Please LogIn</button></div>}
         </>
     )
 }

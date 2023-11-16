@@ -12,42 +12,54 @@ Display a message on the Home page welcoming the authenticated user.
 import React, { useContext } from "react";
 
 import { useNavigate } from "react-router-dom";
-import { UserAuth } from "../../App";
+import { UserAuthContext } from "../../App";
 const Home = () => {
   const navigate = useNavigate();
-  const {login,setLogin, username, setUsername, password, setPassword } =
-    useContext(UserAuth);
+  const {
+    loginfour,
+    setLoginFour,
+    usernamefour,
+    setUsernameFour,
+    passwordfour,
+    setPasswordFour,
+    text,
+    setText,
+  } = useContext(UserAuthContext);
 
-  const handleClick = () => {
-    if (username === "Monu" && password === "Monu@123") {
-      setLogin(true);
-      navigate("/");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (usernamefour === "Monu" && passwordfour === "Monu@123") {
+      setLoginFour(true);
+      navigate("/homefour");
+    } else if (usernamefour && passwordfour) {
+      setText("Invalid Username or Password");
     }
   };
 
   return (
     <>
-      <p>
-        {login ? (
-          <p>Welcome {username} </p>
-        ) : (
-          <div>
+      {loginfour ? (
+        <p>Welcome {usernamefour} </p>
+      ) : (
+        <div>
+          <p>{text}</p>
+          <form onSubmit={handleSubmit}>
             <input
               type="text"
-              onChange={(e) => setUsername(e.target.value)}
-              value={username}
+              onChange={(e) => setUsernameFour(e.target.value)}
+              value={usernamefour}
               placeholder="Enter Username"
             ></input>
             <input
               type="password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
+              onChange={(e) => setPasswordFour(e.target.value)}
+              value={passwordfour}
               placeholder="Enter Password"
             ></input>
-            <button onClick={handleClick}>Login</button>
-          </div>
-        )}
-      </p>
+            <button type="submit">Login</button>
+          </form>
+        </div>
+      )}
     </>
   );
 };

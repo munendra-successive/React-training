@@ -31,9 +31,8 @@ const Home = () => {
     if (usernamefour === "Monu" && passwordfour === "Monu@123") {
       setLoginFour(true);
       navigate("/homefour");
-    }
-    else{
-      setText("Invalid username or password")
+    } else if (usernamefour && passwordfour) {
+      setText("Invalid Username or Password");
     }
   };
 
@@ -43,7 +42,7 @@ const Home = () => {
         <p>Welcome {usernamefour} </p>
       ) : (
         <div>
-        <p>{text}</p>
+          <p>{text}</p>
           <form onSubmit={handleSubmit}>
             <input
               type="text"

@@ -32,7 +32,7 @@ const QuestionEight = () => {
         both inputs. When the user enters a value in one input, the other input
         should update with the converted temperature.
       </h4>
-      <div>
+      <div style={{margin:'20px'}}>
         <label>Enter temperature in Celsius</label>
         <input
           type="text"

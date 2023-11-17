@@ -25,8 +25,9 @@ const QuestionThirteen = () => {
     useFormik({
       initialValues: initialValues,
       validationSchema: SignUpSchema,
-      onSubmit: (action) => {
-        action.resetForm();
+      onSubmit: (values,actions) => {
+        console.log(values);
+        actions.resetForm();
       },
     });
 
@@ -40,7 +41,7 @@ const QuestionThirteen = () => {
         TextField component. Show validation errors as the user types, and clear
         the errors when the input is valid.(Use Formik as well)
       </h4>
-      <FormGroup onSubmit={handleSubmit}>
+      <FormGroup onSubmit={handleSubmit} style={{alignItems:'center'}}>
         <FormControl>
           <Box
             component="form"
@@ -74,7 +75,7 @@ const QuestionThirteen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {values.pass && errors.pass && touched.name ? (
+              {!values.pass && errors.pass && touched.name ? (
                 <p className="form-errors">{errors.pass}</p>
               ) : null}
             </Box>
@@ -85,11 +86,11 @@ const QuestionThirteen = () => {
                 label="Confirm Password"
                 name="confirmpassword"
                 variant="outlined"
-                value={values.confpass}
+                value={values.confirmpassword}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {values.confirmpassword && errors.confirmpassword && touched.name ? (
+              {!values.confirmpassword && errors.confirmpassword && touched.name ? (
                 <p className="form-errors">{errors.confirmpassword}</p>
               ) : null}
             </Box>
@@ -104,7 +105,7 @@ const QuestionThirteen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {values.email && errors.email && touched.name ? (
+              {!values.email && errors.email && touched.name ? (
                 <p className="form-errors">{errors.email}</p>
               ) : null}
             </Box>

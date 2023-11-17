@@ -33,13 +33,15 @@ const QuestionSix = () => {
         placeholder="Enter a Task"
       />
       <button onClick={handleClick}>Add in Todo</button>
-      <ol>
-        <h4>ToDo List</h4>
+      <div>
+        <ul>
+          <h4>ToDo List</h4>
 
-        {tasks.map((item, index) => (
-          <li key={index}>{item.text}</li>
-        ))}
-      </ol>
+          {tasks.map((item, index) => (
+            <li key={index}>{item.text}</li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 };

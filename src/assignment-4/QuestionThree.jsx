@@ -34,8 +34,10 @@ const QuestionThree = () => {
         placeholder="Enter Specific Text"
         value={data}
       />
-      <button onClick={handleClick}>Click</button>
-      {ishow ? <ThreeComp /> : <></>}
+      <div style={{ margin: "10px" }}>
+        <button onClick={handleClick}>Click</button>
+        {ishow ? <ThreeComp /> : <></>}
+      </div>
     </>
   );
 };

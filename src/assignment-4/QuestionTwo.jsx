@@ -15,11 +15,12 @@ const QuestionTwo = () => {
   });
   const handleSubmit = (event) => {
     event.preventDefault();
-    if(details.name){
-    console.log(details.name);
-    console.log(details.gender);
-    console.log(details.check);}
-    setdetails({name:'',gender:'male',check:false})
+    if (details.name) {
+      console.log(details.name);
+      console.log(details.gender);
+      console.log(details.check);
+    }
+    setdetails({ name: "", gender: "male", check: false });
   };
 
   const handleChange = (event) => {
@@ -37,39 +38,45 @@ const QuestionTwo = () => {
         console.
       </h4>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          onChange={handleChange}
-          placeholder="Name"
-          name="name"
-          value={details.name}
-        />
-        <label>Check for subscribe</label>
-        <input
-          type="checkbox"
-          onChange={handleChange}
-          name="check"
-          checked={details.check}
-        />
-        <label>Male</label>
-        <input
-          type="radio"
-          name="gender"
-          value="male"
-          checked={details.gender === "male"}
-          onChange={handleChange}
-        />
-        <label>Female</label>
-        <input
-          type="radio"
-          name="gender"
-          value="female"
-          checked={details.gender === "female"}
-          onChange={handleChange}
-        />
-        <button type="submit">
-          Submit
-        </button>
+        <div>
+          <input
+            type="text"
+            onChange={handleChange}
+            placeholder="Name"
+            name="name"
+            value={details.name}
+          />
+        </div>
+        <div style={{ margin: "20px" }}>
+          <label>Check for subscribe</label>
+          <input
+            type="checkbox"
+            onChange={handleChange}
+            name="check"
+            checked={details.check}
+          />
+        </div>
+        <div style={{ margin: "20px" }}>
+          <label>Male</label>
+          <input
+            type="radio"
+            name="gender"
+            value="male"
+            checked={details.gender === "male"}
+            onChange={handleChange}
+          />
+          <label>Female</label>
+          <input
+            type="radio"
+            name="gender"
+            value="female"
+            checked={details.gender === "female"}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
       </form>
     </>
   );

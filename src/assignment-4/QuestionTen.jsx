@@ -23,8 +23,9 @@ const QuestionTen = () => {
     useFormik({
       initialValues: initialValues,
       validationSchema: SignUpSchema,
-      onSubmit: (action) => {
-        action.resetForm();
+      onSubmit: (values,actions) => {
+        console.log(values);
+        actions.resetForm();
       },
     });
   return (
@@ -34,7 +35,7 @@ const QuestionTen = () => {
         validation. Ensure that error messages are displayed when the user
         enters invalid data.
       </h4>
-      <FormGroup onSubmit={handleSubmit}>
+      <FormGroup onSubmit={handleSubmit} style={{alignItems:"center"}}>
         <FormControl>
           <Box
             component="form"
@@ -46,7 +47,6 @@ const QuestionTen = () => {
           >
             <Box>
               <TextField
-                id="outlined-basic"
                 label="UserName"
                 name="name"
                 variant="outlined"

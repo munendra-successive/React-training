@@ -23,8 +23,9 @@ const QuestionFourTeen = () => {
     useFormik({
       initialValues: initialValues,
       validationSchema: SignUpSchema,
-      onSubmit: (values, action) => {
-        action.resetForm();
+      onSubmit: (values, actions) => {
+        console.log(values);
+        actions.resetForm();
       },
     });
   const [isSubmit, setSubmit] = useState(true);
@@ -42,7 +43,7 @@ const QuestionFourTeen = () => {
         the form cannot be submitted if there are validation errors. Display a
         summary of errors if the user attempts to submit an invalid form.
       </h4>
-      <FormGroup onSubmit={handleSubmit}>
+      <FormGroup onSubmit={handleSubmit} style={{alignItems:'center'}}>
         <FormControl>
           <Box
             component="form"
@@ -74,7 +75,7 @@ const QuestionFourTeen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {values.pass && errors.pass && touched.name ? (
+              {!values.pass && errors.pass && touched.name ? (
                 <p>{errors.pass}</p>
               ) : null}
             </Box>
@@ -89,7 +90,7 @@ const QuestionFourTeen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {values.confirmpassword && errors.confirmpassword && touched.name ? (
+              {!values.confirmpassword && errors.confirmpassword && touched.name ? (
                 <p>{errors.confirmpassword}</p>
               ) : null}
             </Box>
@@ -97,14 +98,14 @@ const QuestionFourTeen = () => {
             <Box color={'red'}>
               <TextField
                 id="outlined-basic"
-                label="EMail"
+                label="Email"
                 name="email"
                 variant="outlined"
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              { values.email && errors.email && touched.name ? <p>{errors.email}</p> : null}
+              { !values.email && errors.email && touched.name ? <p>{errors.email}</p> : null}
             </Box>
             <Button type="submit" disabled={isSubmit}>
               submit

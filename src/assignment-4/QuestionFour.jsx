@@ -35,13 +35,15 @@ const QuestionFour = () => {
         ensure that the two passwords match before allowing the form submission.
       </h4>
       <form onSubmit={handleSubmit}>
-        <input
-          onChange={handleChange}
-          type="password"
-          placeholder="PasswordOne"
-          value={password.passwordOne}
-          name="passwordOne"
-        />
+        <div style={{ margin: "20px" }}>
+          <input
+            onChange={handleChange}
+            type="password"
+            placeholder="PasswordOne"
+            value={password.passwordOne}
+            name="passwordOne"
+          />
+        </div>
         <input
           onChange={handleChange}
           type="password"
@@ -49,9 +51,11 @@ const QuestionFour = () => {
           value={password.passwordTwo}
           name="passwordTwo"
         />
-        <button disabled={isSubmit} type="submit">
-          Submit
-        </button>
+        <div style={{margin:'10px'}}>
+          <button disabled={isSubmit} type="submit">
+            Submit
+          </button>
+        </div>
       </form>
     </>
   );

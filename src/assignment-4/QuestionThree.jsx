@@ -14,6 +14,8 @@ const QuestionThree = () => {
   const handleClick = () => {
     if (data === "show") {
       setShow(true);
+    } else {
+      setShow(false);
     }
   };
   return (

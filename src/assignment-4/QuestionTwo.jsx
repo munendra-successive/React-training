@@ -15,9 +15,11 @@ const QuestionTwo = () => {
   });
   const handleSubmit = (event) => {
     event.preventDefault();
+    if(details.name){
     console.log(details.name);
     console.log(details.gender);
-    console.log(details.check);
+    console.log(details.check);}
+    setdetails({name:'',gender:'male',check:false})
   };
 
   const handleChange = (event) => {
@@ -65,7 +67,7 @@ const QuestionTwo = () => {
           checked={details.gender === "female"}
           onChange={handleChange}
         />
-        <button type="submit" onClick={handleSubmit}>
+        <button type="submit">
           Submit
         </button>
       </form>

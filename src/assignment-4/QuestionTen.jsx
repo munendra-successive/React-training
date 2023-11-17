@@ -54,9 +54,11 @@ const QuestionTen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {errors.name && touched.name ? (
+              <div style={{color:'red'}}>
+              { errors.name && touched.name ? (
                 <p className="form-errors">{errors.name}</p>
               ) : null}
+              </div>
             </Box>
             <Box>
               <TextField
@@ -68,9 +70,11 @@ const QuestionTen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {errors.pass && touched.name ? (
+              <div style={{color:'red'}}>
+              {values.pass && errors.pass && touched.name ? (
                 <p className="form-errors">{errors.pass}</p>
               ) : null}
+              </div>
             </Box>
 
             <Box>
@@ -84,22 +88,26 @@ const QuestionTen = () => {
                 onBlur={handleBlur}
               />
             </Box>
-            {errors.confirmpassword && touched.name ? (
+            <div style={{color:'red'}}>
+            {values.confirmpassword && errors.confirmpassword && touched.name ? (
               <p className="form-errors">{errors.confirmpassword}</p>
             ) : null}
+            </div>
             <Box>
               <TextField
                 id="outlined-basic"
-                label="EMail"
+                label="Email"
                 name="email"
                 variant="outlined"
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {errors.email && touched.name ? (
+              <div style={{color:'red'}}>
+              {values.email && errors.email && touched.name ? (
                 <p className="form-errors">{errors.email}</p>
               ) : null}
+              </div>
             </Box>
             <Button type="submit">submit</Button>
           </Box>

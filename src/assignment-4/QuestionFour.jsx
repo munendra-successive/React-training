@@ -7,19 +7,23 @@ Add a validation rule to ensure that the two passwords match before allowing the
 import React, { useEffect, useState } from "react";
 
 const QuestionFour = () => {
-  const [pass, setPass] = useState({ pass1: "", pass2: "" });
+  const [password, setPass] = useState({ passwordOne: "", passwordTwo: "" });
   const [isSubmit, setSubmit] = useState(false);
   const handleChange = (event) => {
     const { name, value } = event.target;
     setPass((preValue) => ({ ...preValue, [name]: value }));
   };
   useEffect(() => {
-    if (pass.pass1 && pass.pass2 && pass.pass1 === pass.pass2) {
+    if (
+      password.passwordOne &&
+      password.passwordTwo &&
+      password.passwordOne === password.passwordTwo
+    ) {
       setSubmit(false);
     } else {
       setSubmit(true);
     }
-  }, [pass]);
+  }, [password]);
   const handleSubmit = (event) => {
     event.preventDefault();
   };
@@ -34,16 +38,16 @@ const QuestionFour = () => {
         <input
           onChange={handleChange}
           type="password"
-          placeholder="Password1"
-          value={pass.pass1}
-          name="pass1"
+          placeholder="PasswordOne"
+          value={password.passwordOne}
+          name="passwordOne"
         />
         <input
           onChange={handleChange}
           type="password"
-          placeholder="Password2"
-          value={pass.pass2}
-          name="pass2"
+          placeholder="PasswordTwo"
+          value={password.passwordTwo}
+          name="passwordTwo"
         />
         <button disabled={isSubmit} type="submit">
           Submit

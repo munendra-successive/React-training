@@ -50,7 +50,7 @@ const QuestionThirteen = () => {
             noValidate
             autoComplete="off"
           >
-            <Box>
+            <Box color={"red"}>
               <TextField
                 id="outlined-basic"
                 label="UserName"
@@ -64,7 +64,7 @@ const QuestionThirteen = () => {
                 <p className="form-errors">{errors.name}</p>
               ) : null}
             </Box>
-            <Box>
+            <Box color={"red"}>
               <TextField
                 id="outlined-basic"
                 label="Password"
@@ -74,12 +74,12 @@ const QuestionThirteen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {errors.pass && touched.name ? (
+              {values.pass && errors.pass && touched.name ? (
                 <p className="form-errors">{errors.pass}</p>
               ) : null}
             </Box>
 
-            <Box>
+            <Box color={"red"}>
               <TextField
                 id="outlined-basic"
                 label="Confirm Password"
@@ -89,21 +89,22 @@ const QuestionThirteen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
+              {values.confirmpassword && errors.confirmpassword && touched.name ? (
+                <p className="form-errors">{errors.confirmpassword}</p>
+              ) : null}
             </Box>
-            {errors.confirmpassword && touched.name ? (
-              <p className="form-errors">{errors.confirmpassword}</p>
-            ) : null}
-            <Box>
+
+            <Box color={"red"}>
               <TextField
                 id="outlined-basic"
-                label="EMail"
+                label="Email"
                 name="email"
                 variant="outlined"
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {errors.email && touched.name ? (
+              {values.email && errors.email && touched.name ? (
                 <p className="form-errors">{errors.email}</p>
               ) : null}
             </Box>

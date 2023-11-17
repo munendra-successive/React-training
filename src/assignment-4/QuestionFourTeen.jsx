@@ -52,7 +52,7 @@ const QuestionFourTeen = () => {
             noValidate
             autoComplete="off"
           >
-            <Box>
+            <Box color={"red"}>
               <TextField
                 id="outlined-basic"
                 label="UserName"
@@ -64,7 +64,7 @@ const QuestionFourTeen = () => {
               />
               {errors.name && touched.name ? <p>{errors.name}</p> : null}
             </Box>
-            <Box>
+            <Box color={"red"}>
               <TextField
                 id="outlined-basic"
                 label="Password"
@@ -74,10 +74,12 @@ const QuestionFourTeen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {errors.pass && touched.name ? <p>{errors.pass}</p> : null}
+              {values.pass && errors.pass && touched.name ? (
+                <p>{errors.pass}</p>
+              ) : null}
             </Box>
 
-            <Box>
+            <Box color={"red"}>
               <TextField
                 id="outlined-basic"
                 label="Confirm Password"
@@ -87,11 +89,12 @@ const QuestionFourTeen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
+              {values.confirmpassword && errors.confirmpassword && touched.name ? (
+                <p>{errors.confirmpassword}</p>
+              ) : null}
             </Box>
-            {errors.confirmpassword && touched.name ? (
-              <p>{errors.confirmpassword}</p>
-            ) : null}
-            <Box>
+
+            <Box color={'red'}>
               <TextField
                 id="outlined-basic"
                 label="EMail"
@@ -101,7 +104,7 @@ const QuestionFourTeen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {errors.email && touched.name ? <p>{errors.email}</p> : null}
+              { values.email && errors.email && touched.name ? <p>{errors.email}</p> : null}
             </Box>
             <Button type="submit" disabled={isSubmit}>
               submit

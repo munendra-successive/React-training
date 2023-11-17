@@ -48,9 +48,10 @@ const QuestionEleven = () => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        {name?"":
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Enter Your Name
-          </Typography>
+          </Typography>}
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             Hi<span style={{ fontWeight: "bold" }}> {name} </span> Welcome to
             modal dialog component

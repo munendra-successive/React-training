@@ -6,21 +6,30 @@ When the user enters a value in one input, the other input should update with th
 
 */
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const QuestionEight = () => {
-  const [celsius, setCelsius] = useState(0);
-  const [fahrenheit, setFahrenheit] = useState(0);
-  useEffect(() => {
-    const newfahreinheit = (celsius * 9) / 5 + 32;
-    setFahrenheit(newfahreinheit);
-  }, [celsius]);
+  const [celsius, setCelsius] = useState('');
+  const [fahrenheit, setFahrenheit] = useState('');
+  const handleCelsiusChange = (e) => {
+    const value = e.target.value;
+    const converted = (value * 9) / 5 + 32;
+    setFahrenheit(converted);
+    setCelsius(value);
+  };
+  const handleFahreinheitChange = (e) => {
+    const value = e.target.value;
+    const converted = (value -32) *5/9
+    setCelsius(converted)
+    setFahrenheit(value)
+    
+  };
   return (
     <>
       <h4>
-        8.Create a temperature converter component with two input fields: one for
-        Celsius and one for Fahrenheit. Implement controlled components for both
-        inputs. When the user enters a value in one input, the other input
+        8.Create a temperature converter component with two input fields: one
+        for Celsius and one for Fahrenheit. Implement controlled components for
+        both inputs. When the user enters a value in one input, the other input
         should update with the converted temperature.
       </h4>
       <div>
@@ -30,9 +39,7 @@ const QuestionEight = () => {
           placeholder="Celsius"
           name="celsius"
           value={celsius}
-          onChange={(e) => {
-            setCelsius(e.target.value);
-          }}
+          onChange={handleCelsiusChange}
         />
       </div>
       <div>
@@ -42,6 +49,7 @@ const QuestionEight = () => {
           placeholder="Fahreinheit"
           name="fahreinheit"
           value={fahrenheit}
+          onChange={handleFahreinheitChange}
         />
       </div>
     </>

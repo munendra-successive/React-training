@@ -6,7 +6,7 @@ Display it while the data is being fetched and hide it once the data is loaded.
 */
 import { useState, useEffect } from "react";
 const QuestionThree = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
@@ -40,7 +40,7 @@ const QuestionThree = () => {
           </table>
         )
       ) : (
-        <div style={{ border: "2px solid green", width: "100px" }}>Loading</div>
+        <div style={{ border: "2px solid green", width: "100px" }}>Loading...</div>
       )}
     </>
   );

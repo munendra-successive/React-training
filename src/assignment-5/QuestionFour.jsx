@@ -24,12 +24,6 @@ const QuestionFour = () => {
       });
   }, [data]);
 
-  const data1 = data.map((item) => ({
-    id: item.id,
-    name: item.name,
-    username: item.username,
-    email: item.email,
-  }));
   return (
     <>
       <h4>
@@ -41,7 +35,7 @@ const QuestionFour = () => {
 
       <div style={{ height: 400, width: "100%" }}>
         <DataGrid
-          rows={data1}
+          rows={data}
           columns={columns}
           initialState={{
             pagination: {

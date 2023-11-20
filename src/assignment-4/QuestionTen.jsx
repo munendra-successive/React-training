@@ -71,7 +71,7 @@ const QuestionTen = () => {
                 onBlur={handleBlur}
               />
               <div style={{color:'red'}}>
-              {values.pass && errors.pass && touched.name ? (
+              {values.pass && errors.pass && touched.pass ? (
                 <p className="form-errors">{errors.pass}</p>
               ) : null}
               </div>
@@ -89,7 +89,7 @@ const QuestionTen = () => {
               />
             </Box>
             <div style={{color:'red'}}>
-            {values.confirmpassword && errors.confirmpassword && touched.name ? (
+            {values.confirmpassword && errors.confirmpassword && touched.confirmpassword ? (
               <p className="form-errors">{errors.confirmpassword}</p>
             ) : null}
             </div>
@@ -104,7 +104,7 @@ const QuestionTen = () => {
                 onBlur={handleBlur}
               />
               <div style={{color:'red'}}>
-              {values.email && errors.email && touched.name ? (
+              {values.email && errors.email && touched.email ? (
                 <p className="form-errors">{errors.email}</p>
               ) : null}
               </div>

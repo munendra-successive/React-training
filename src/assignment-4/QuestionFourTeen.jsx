@@ -43,7 +43,7 @@ const QuestionFourTeen = () => {
         the form cannot be submitted if there are validation errors. Display a
         summary of errors if the user attempts to submit an invalid form.
       </h4>
-      <FormGroup onSubmit={handleSubmit} style={{alignItems:'center'}}>
+      <FormGroup onSubmit={handleSubmit} style={{ alignItems: "center" }}>
         <FormControl>
           <Box
             component="form"
@@ -63,7 +63,11 @@ const QuestionFourTeen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {errors.name && touched.name ? <p>{errors.name}</p> : null}
+              <div style={{ color: "red" }}>
+                {errors.name && touched.name ? (
+                  <p className="form-errors">{errors.name}</p>
+                ) : null}
+              </div>
             </Box>
             <Box color={"red"}>
               <TextField
@@ -75,9 +79,11 @@ const QuestionFourTeen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {!values.pass && errors.pass && touched.name ? (
-                <p>{errors.pass}</p>
-              ) : null}
+              <div style={{ color: "red" }}>
+                {values.pass && errors.pass && touched.name ? (
+                  <p className="form-errors">{errors.pass}</p>
+                ) : null}
+              </div>
             </Box>
 
             <Box color={"red"}>
@@ -90,12 +96,16 @@ const QuestionFourTeen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {!values.confirmpassword && errors.confirmpassword && touched.name ? (
-                <p>{errors.confirmpassword}</p>
-              ) : null}
+              <div style={{ color: "red" }}>
+                {values.confirmpassword &&
+                errors.confirmpassword &&
+                touched.name ? (
+                  <p className="form-errors">{errors.confirmpassword}</p>
+                ) : null}
+              </div>
             </Box>
 
-            <Box color={'red'}>
+            <Box color={"red"}>
               <TextField
                 id="outlined-basic"
                 label="Email"
@@ -105,7 +115,11 @@ const QuestionFourTeen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              { !values.email && errors.email && touched.name ? <p>{errors.email}</p> : null}
+              <div style={{ color: "red" }}>
+                {values.email && errors.email && touched.name ? (
+                  <p className="form-errors">{errors.email}</p>
+                ) : null}
+              </div>{" "}
             </Box>
             <Button type="submit" disabled={isSubmit}>
               submit

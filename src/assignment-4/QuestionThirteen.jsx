@@ -61,9 +61,11 @@ const QuestionThirteen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {errors.name && touched.name ? (
+               <div style={{color:'red'}}>
+              { errors.name && touched.name ? (
                 <p className="form-errors">{errors.name}</p>
               ) : null}
+              </div>
             </Box>
             <Box color={"red"}>
               <TextField
@@ -75,9 +77,11 @@ const QuestionThirteen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {!values.pass && errors.pass && touched.name ? (
+             <div style={{color:'red'}}>
+              {values.pass && errors.pass && touched.name ? (
                 <p className="form-errors">{errors.pass}</p>
               ) : null}
+              </div>
             </Box>
 
             <Box color={"red"}>
@@ -90,9 +94,11 @@ const QuestionThirteen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {!values.confirmpassword && errors.confirmpassword && touched.name ? (
-                <p className="form-errors">{errors.confirmpassword}</p>
-              ) : null}
+              <div style={{color:'red'}}>
+            {values.confirmpassword && errors.confirmpassword && touched.name ? (
+              <p className="form-errors">{errors.confirmpassword}</p>
+            ) : null}
+            </div>
             </Box>
 
             <Box color={"red"}>
@@ -105,9 +111,11 @@ const QuestionThirteen = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {!values.email && errors.email && touched.name ? (
+             <div style={{color:'red'}}>
+              {values.email && errors.email && touched.name ? (
                 <p className="form-errors">{errors.email}</p>
               ) : null}
+              </div>
             </Box>
             <Button type="submit">submit</Button>
           </Box>

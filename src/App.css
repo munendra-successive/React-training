@@ -37,7 +37,7 @@
   }
 }
 #question {
-  border: 5px outset black;
+  border: 2px outset black;
   background-color: lightblue;
   text-align: center;
   padding: 5px 5px 5px 5px;
@@ -61,7 +61,7 @@ ul {
 }
 
 nav {
-  background: #DEB887;
+  background: #deb887;
   height: 25px;
   display: flex;
   justify-content: space-between;

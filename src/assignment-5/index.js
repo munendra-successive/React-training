@@ -1,6 +1,11 @@
 import { ApolloProvider1 } from "./QuestionEight";
 import { ShowLogs, withLogger } from "./QuestionFifteen";
-import { WithAuth, Login } from "./QuestionFourteen";
+import {
+  WithAuth,
+  Login,
+  AuthContextProvider,
+  Navbar,
+} from "./QuestionFourteen";
 import { ApolloProvider2 } from "./QuestionNine";
 import { DisplayData, withDataFetching } from "./QuestionSixteen";
 import { QuestionThirteen } from "./QuestionThirteen";
@@ -19,6 +24,8 @@ export {
   withLogger,
   WithAuth,
   Login,
+  AuthContextProvider,
+  Navbar,
   ApolloProvider2,
   DisplayData,
   withDataFetching,

@@ -22,7 +22,7 @@ const QuestionFour = () => {
       .then((data) => {
         setData(data);
       });
-  }, [data]);
+  }, []);
 
   return (
     <>

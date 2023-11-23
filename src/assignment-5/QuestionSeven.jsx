@@ -16,6 +16,8 @@ const QuestionSeven = () => {
       content: content,
     });
     console.log(data);
+    setTitle("")
+    setContent("")
   };
   return (
     <>

@@ -26,35 +26,43 @@ const style = {
 
 const ModalComp = (props) => {
   const { about, home, contact } = props;
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+
+  const [openhome, setOpenHome] = useState(false);
+  const [openabout, setOpenAbout] = useState(false);
+  const [opencontact, setOpenContact] = useState(false);
+
+  const handleOpenhome = () => setOpenHome(true);
+  const handleClosehome = () => setOpenHome(false);
+  const handleOpenabout = () => setOpenAbout(true);
+  const handleCloseabout = () => setOpenAbout(false);
+  const handleOpencontact = () => setOpenContact(true);
+  const handleClosecontact = () => setOpenContact(false);
   return (
     <>
       <div>
-        <Button onClick={handleOpen}>Open Home</Button>
-        <Modal open={open}>
+        <Button onClick={handleOpenhome}>Open Home</Button>
+        <Modal open={openhome}>
           <Box sx={style}>
             <Typography>{home}</Typography>
-            <Button onClick={handleClose}>Close Modal</Button>
+            <Button onClick={handleClosehome}>Close Modal</Button>
           </Box>
         </Modal>
       </div>
       <div>
-        <Button onClick={handleOpen}>Open About</Button>
-        <Modal open={open}>
+        <Button onClick={handleOpenabout}>Open About</Button>
+        <Modal open={openabout}>
           <Box sx={style}>
             <Typography>{about}</Typography>
-            <Button onClick={handleClose}>Close Modal</Button>
+            <Button onClick={handleCloseabout}>Close Modal</Button>
           </Box>
         </Modal>
       </div>
       <div>
-        <Button onClick={handleOpen}>Open Contact</Button>
-        <Modal open={open}>
+        <Button onClick={handleOpencontact}>Open Contact</Button>
+        <Modal open={opencontact}>
           <Box sx={style}>
             <Typography>{contact}</Typography>
-            <Button onClick={handleClose}>Close Modal</Button>
+            <Button onClick={handleClosecontact}>Close Modal</Button>
           </Box>
         </Modal>
       </div>

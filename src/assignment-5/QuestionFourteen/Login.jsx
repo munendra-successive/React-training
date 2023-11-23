@@ -1,14 +1,23 @@
 import { useContext } from "react";
-import {UserAuthContext } from "../../App";
+import { UserAuthContext } from "./AuthContextProvider";
 
 const Login = () => {
-  const { username, setPassword, setUsername, password, login, handleSubmit } =
-    useContext(UserAuthContext);
+  const {
+    username,
+    setPassword,
+    setUsername,
+    password,
+    login,
+    handleSubmit,
+    text,
+  } = useContext(UserAuthContext);
 
   return (
     <>
       {!login && (
         <>
+          {" "}
+          <div>{text}</div>
           <input
             type="text"
             placeholder="Username"

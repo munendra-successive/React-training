@@ -9,7 +9,6 @@ const ShowData = () => {
     },
   });
   console.log(data?.allFilms, loading, error);
-
   return (
     <>
       <h4>
@@ -17,7 +16,7 @@ const ShowData = () => {
         component that uses the client to fetch and display data from a GraphQL
         API.
       </h4>
-      "Hello Munendra"
+      "Hello, Data is on Console"
     </>
   );
 };

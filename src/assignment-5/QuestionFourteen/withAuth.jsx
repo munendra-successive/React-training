@@ -6,7 +6,7 @@ Implement this HOC on a sample component and demonstrate how it protects routes.
 */
 
 import { useContext } from "react";
-import { UserAuthContext } from "../../App";
+import { UserAuthContext } from "./AuthContextProvider";
 import Login from "./Login";
 
 const WithAuth = (Home) => {

@@ -13,7 +13,7 @@ const QuestionThree = () => {
       .then((data) => {
         setData(data);
       });
-  }, [data]);
+  }, []);
 
   return (
     <>

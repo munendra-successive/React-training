@@ -1,13 +1,14 @@
-import { createContext } from "react";
 import "./App.css";
 import Home from "./assignment-5/QuestionFourteen/Home";
-import { useState } from "react";
-import { Route, Routes, Link, useNavigate } from "react-router-dom";
-import {ApolloProvider1,
+import { Route, Routes } from "react-router-dom";
+import {
+  ApolloProvider1,
   ShowLogs,
   withLogger,
   WithAuth,
   Login,
+  AuthContextProvider,
+  Navbar,
   ApolloProvider2,
   DisplayData,
   withDataFetching,
@@ -19,20 +20,10 @@ import {ApolloProvider1,
   QuestionSeven,
   QuestionSix,
   QuestionThree,
-  QuestionTwo} from './assignment-5'
+  QuestionTwo,
+} from "./assignment-5";
 
-export const UserAuthContext = createContext();
 function App() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [login, setLogin] = useState(false);
-  const navi = useNavigate();
-  const handleSubmit = () => {
-    if (username === "Monu" && password === "Monu@123") {
-      setLogin(true);
-      navi("/home");
-    }
-  };
   const DataFetching = withDataFetching(DisplayData);
   const ShowLog = withLogger(ShowLogs);
   return (
@@ -58,10 +49,10 @@ function App() {
       <div id="question">
         <QuestionSeven />
       </div>
-      {/* <div id="question">
+      <div id="question">
         <ApolloProvider1 />
       </div>
-      <div id="question">
+      {/* <div id="question">
         <ApolloProvider2 />
       </div> */}
       <div id="question">
@@ -77,27 +68,14 @@ function App() {
           sampleFile: Untitled Document 1 component and demonstrate how it
           protects routes.
         </h4>
-        <UserAuthContext.Provider
-          value={{
-            username,
-            password,
-            setUsername,
-            setPassword,
-            login,
-            setLogin,
-            handleSubmit,
-          }}
-        >
-          <nav>
-            <Link to="/">Login</Link>
-            <Link to="/home">Home</Link>
-            <Link onClick={() => setLogin(false)}>Logout</Link>
-          </nav>
+
+        <AuthContextProvider>
+          <Navbar />
           <Routes>
             <Route path="/" Component={Login} />
             <Route path="/home" Component={() => WithAuth(Home)} />
           </Routes>
-        </UserAuthContext.Provider>
+        </AuthContextProvider>
       </div>
       <div id="question">
         <ShowLog />

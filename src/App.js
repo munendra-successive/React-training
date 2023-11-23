@@ -1,5 +1,4 @@
 import "./App.css";
-import Home from "./assignment-5/QuestionFourteen/Home";
 import { Route, Routes } from "react-router-dom";
 import {
   ApolloProvider1,
@@ -9,6 +8,7 @@ import {
   Login,
   AuthContextProvider,
   Navbar,
+  Home,
   ApolloProvider2,
   DisplayData,
   withDataFetching,

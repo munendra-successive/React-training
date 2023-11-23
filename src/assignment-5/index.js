@@ -5,6 +5,7 @@ import {
   Login,
   AuthContextProvider,
   Navbar,
+  Home,
 } from "./QuestionFourteen";
 import { ApolloProvider2 } from "./QuestionNine";
 import { DisplayData, withDataFetching } from "./QuestionSixteen";
@@ -26,6 +27,7 @@ export {
   Login,
   AuthContextProvider,
   Navbar,
+  Home,
   ApolloProvider2,
   DisplayData,
   withDataFetching,

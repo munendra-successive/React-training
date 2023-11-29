@@ -1,6 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 /*
 
 5.Create a React component that fetches data from a public
@@ -24,18 +23,22 @@ const QuestionFive = () => {
       {data ? (
         data && (
           <table>
-            <tr>
-              <th>Name</th>
-              <th>Username</th>
-              <th>Email</th>
-            </tr>
-            {data?.map((item, index) => (
+            <thead>
               <tr>
-                <td>{item.name}</td>
-                <td>{item.username}</td>
-                <td>{item.email}</td>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
               </tr>
-            ))}
+            </thead>
+            <tbody>
+              {data?.map((item, index) => (
+                <tr>
+                  <td>{item.name}</td>
+                  <td>{item.username}</td>
+                  <td>{item.email}</td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         )
       ) : (

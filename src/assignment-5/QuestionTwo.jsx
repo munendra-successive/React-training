@@ -8,7 +8,7 @@ Display an error message if the request fails and provide a way for the user to 
 import { useEffect, useState } from "react";
 
 const QuestionTwo = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [isError, setError] = useState(null);
   const [retry, setRetry] = useState(false);
   useEffect(() => {
@@ -33,18 +33,22 @@ const QuestionTwo = () => {
       {!isError ? (
         data && (
           <table>
-            <tr>
-              <th>Name</th>
-              <th>Username</th>
-              <th>Email</th>
-            </tr>
-            {data?.map((item, index) => (
+            <thead>
               <tr>
-                <td>{item.name}</td>
-                <td>{item.username}</td>
-                <td>{item.email}</td>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
               </tr>
-            ))}
+            </thead>
+            <tbody>
+              {data?.map((item, index) => (
+                <tr>
+                  <td>{item.name}</td>
+                  <td>{item.username}</td>
+                  <td>{item.email}</td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         )
       ) : (

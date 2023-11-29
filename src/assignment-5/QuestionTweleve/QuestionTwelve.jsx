@@ -42,7 +42,7 @@ const QuestionTwelve = () => {
         Demonstrate how to use this component in a sample application.
       </h4>
       <ButtonComp
-        name={{ buttonstyles, handleClick1, handleClick2, handleClick3 }}
+        props={{ buttonstyles, handleClick1, handleClick2, handleClick3 }}
       />
     </>
   );

@@ -5,6 +5,9 @@ Display it while the data is being fetched and hide it once the data is loaded.
 
 */
 import { useState, useEffect } from "react";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+
 const QuestionThree = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
@@ -40,7 +43,9 @@ const QuestionThree = () => {
           </table>
         )
       ) : (
-        <div style={{ border: "2px solid green", width: "100px" }}>Loading...</div>
+        <Box sx={{ display: "flex" }}>
+          <CircularProgress />
+        </Box>
       )}
     </>
   );

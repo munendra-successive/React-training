@@ -5,8 +5,7 @@ Display an error message if the request fails and provide a way for the user to 
 */
 
 import axios from "axios";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const QuestionSix = () => {
   const [data, setData] = useState();

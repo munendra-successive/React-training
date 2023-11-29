@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 
-const ButtonComp = (props) => {
-  const { buttonstyles, handleClick1, handleClick2, handleClick3 } = props.name;
+const ButtonComp = ({props}) => {
+  const { buttonstyles, handleClick1, handleClick2, handleClick3 } = props;
   return (
     <>
       <Button style={buttonstyles.primary} onClick={handleClick1}>

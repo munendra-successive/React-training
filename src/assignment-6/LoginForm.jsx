@@ -14,6 +14,8 @@ const LoginForm = () => {
   const handleClick = () => {
     if (username === "Monu" && password === "Monu@123") {
       setLogin(true);
+      setUserName("");
+      setPassword("");
     }
   };
   return (
@@ -25,6 +27,7 @@ const LoginForm = () => {
         button works correctly.
       </h4>
       <input
+        value={username}
         data-testid="username"
         type="text"
         placeholder="Username"
@@ -33,6 +36,7 @@ const LoginForm = () => {
         }}
       />
       <input
+        value={password}
         data-testid="password"
         type="password"
         placeholder="Password"

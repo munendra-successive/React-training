@@ -1,4 +1,6 @@
 import { Suspense, lazy } from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import { ErrorBoundary } from "react-error-boundary";
 const About = lazy(() => import("./About"));
 const Home = lazy(() => import("./Home"));
 const Contact = lazy(() => import("./Contact"));
@@ -12,11 +14,20 @@ const QuestionOne = () => {
         the component should be loaded lazily, improving the application's
         initial loading time.
       </h4>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Home />
-        <About />
-        <Contact />
-      </Suspense>
+      <ErrorBoundary fallback={<div>Have Some Errors</div>}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <nav>
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
+          </nav>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </Suspense>
+      </ErrorBoundary>
     </>
   );
 };

@@ -3,20 +3,25 @@ import { useContext } from "react";
 import { UserAuthContext } from "./AuthContextProvider";
 const Navbar = () => {
   const navigate = useNavigate();
-  const { setLogin } = useContext(UserAuthContext);
+  const { setLogin, login } = useContext(UserAuthContext);
 
   return (
     <nav>
       <Link
+        to="/"
         onClick={() => {
           setLogin(false);
-          navigate('/')
+          navigate("/");
         }}
       >
         Login
       </Link>
-      <Link to="/home">Home</Link>
-      <Link onClick={() => setLogin(false)}>Logout</Link>
+      <Link to={login ? "/home" : "/"}>Home</Link>
+      {login && (
+        <Link to="/" onClick={() => setLogin(false)}>
+          Logout
+        </Link>
+      )}
     </nav>
   );
 };

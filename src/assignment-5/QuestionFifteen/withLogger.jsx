@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const withLogger = (ShowLogs) => (props) => {
   const [count, setCount] = useState(0);
-  const [state, setState] = useState(false);
+  const [state, setState] = useState(true);
   useEffect(() => {
     console.log("Component Mounted");
     return () => {

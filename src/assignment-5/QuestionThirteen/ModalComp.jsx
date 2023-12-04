@@ -31,38 +31,32 @@ const ModalComp = (props) => {
   const [openabout, setOpenAbout] = useState(false);
   const [opencontact, setOpenContact] = useState(false);
 
-  const handleOpenhome = () => setOpenHome(true);
-  const handleClosehome = () => setOpenHome(false);
-  const handleOpenabout = () => setOpenAbout(true);
-  const handleCloseabout = () => setOpenAbout(false);
-  const handleOpencontact = () => setOpenContact(true);
-  const handleClosecontact = () => setOpenContact(false);
   return (
     <>
       <div>
-        <Button onClick={handleOpenhome}>Open Home</Button>
+        <Button onClick={() => setOpenHome(true)}>Open Home</Button>
         <Modal open={openhome}>
           <Box sx={style}>
             <Typography>{home}</Typography>
-            <Button onClick={handleClosehome}>Close Modal</Button>
+            <Button onClick={() => setOpenHome(false)}>Close Modal</Button>
           </Box>
         </Modal>
       </div>
       <div>
-        <Button onClick={handleOpenabout}>Open About</Button>
+        <Button onClick={() => setOpenAbout(true)}>Open About</Button>
         <Modal open={openabout}>
           <Box sx={style}>
             <Typography>{about}</Typography>
-            <Button onClick={handleCloseabout}>Close Modal</Button>
+            <Button onClick={() => setOpenAbout(false)}>Close Modal</Button>
           </Box>
         </Modal>
       </div>
       <div>
-        <Button onClick={handleOpencontact}>Open Contact</Button>
+        <Button onClick={() => setOpenContact(true)}>Open Contact</Button>
         <Modal open={opencontact}>
           <Box sx={style}>
             <Typography>{contact}</Typography>
-            <Button onClick={handleClosecontact}>Close Modal</Button>
+            <Button onClick={() => setOpenContact(false)}>Close Modal</Button>
           </Box>
         </Modal>
       </div>

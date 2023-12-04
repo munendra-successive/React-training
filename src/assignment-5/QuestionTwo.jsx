@@ -6,6 +6,8 @@ Display an error message if the request fails and provide a way for the user to 
 */
 
 import { useEffect, useState } from "react";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 const QuestionTwo = () => {
   const [data, setData] = useState([]);
@@ -41,13 +43,25 @@ const QuestionTwo = () => {
               </tr>
             </thead>
             <tbody>
-              {data?.map((item, index) => (
-                <tr>
-                  <td>{item.name}</td>
-                  <td>{item.username}</td>
-                  <td>{item.email}</td>
-                </tr>
-              ))}
+              {data.length !== 0 ? (
+                data.map((item, index) => (
+                  <tr>
+                    <td>{item.name}</td>
+                    <td>{item.username}</td>
+                    <td>{item.email}</td>
+                  </tr>
+                ))
+              ) : (
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <CircularProgress />
+                </Box>
+              )}
             </tbody>
           </table>
         )

@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 /*
 
 5.Create a React component that fetches data from a public
@@ -42,7 +44,16 @@ const QuestionFive = () => {
           </table>
         )
       ) : (
-        <div style={{ border: "2px solid green", width: "100px" }}>Loading</div>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+          }}
+        >
+          <CircularProgress />
+        </Box>
       )}
     </>
   );

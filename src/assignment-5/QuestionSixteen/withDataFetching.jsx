@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import React from "react";
+import { React, useEffect, useState } from "react";
 
 const withDataFetching = (DisplayData) => {
   return function DataFetch() {

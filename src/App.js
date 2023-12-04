@@ -1,6 +1,12 @@
 import "./App.css";
 
-import { QuestionOne,Counter,LoginForm,UserProfile,ModalComponent} from './assignment-6'
+import {
+  QuestionOne,
+  Counter,
+  LoginForm,
+  UserProfile,
+  ModalComponent,
+} from "./assignment-6";
 
 const userDetails = {
   name: "Monu",
@@ -14,6 +20,7 @@ function App() {
       <div id="question">
         <QuestionOne />
       </div>
+
       <div id="question">
         <Counter />
       </div>

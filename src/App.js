@@ -1,22 +1,31 @@
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
 import {
-  QuestionOne,
-  QuestionTwo,
-  QuestionThree,
-  QuestionFour,
-  QuestionFive,
-  QuestionSix,
-  QuestionSeven,
-  QuestionEight,
-  QuestionNine,
-  QuestionTen,
-  QuestionEleven,
-  QuestionTwelve,
+  ApolloProvider1,
+  ShowLogs,
+  withLogger,
+  WithAuth,
+  Login,
+  AuthContextProvider,
+  Navbar,
+  Home,
+  ApolloProvider2,
+  DisplayData,
+  withDataFetching,
   QuestionThirteen,
-  QuestionFourTeen,
-} from "./assignment-4";
+  QuestionTwelve,
+  QuestionFive,
+  QuestionFour,
+  QuestionOne,
+  QuestionSeven,
+  QuestionSix,
+  QuestionThree,
+  QuestionTwo,
+} from "./assignment-5";
 
 function App() {
+  const DataFetching = withDataFetching(DisplayData);
+  const ShowLog = withLogger(ShowLogs);
   return (
     <>
       <div id="question">
@@ -41,17 +50,11 @@ function App() {
         <QuestionSeven />
       </div>
       <div id="question">
-        <QuestionEight />
+        <ApolloProvider1 />
       </div>
-      <div>
-        <QuestionNine />
-      </div>
-      <div id="question">
-        <QuestionTen />
-      </div>
-      <div id="question">
-        <QuestionEleven />
-      </div>
+      {/* <div id="question">
+        <ApolloProvider2 />
+      </div> */}
       <div id="question">
         <QuestionTwelve />
       </div>
@@ -59,7 +62,26 @@ function App() {
         <QuestionThirteen />
       </div>
       <div id="question">
-        <QuestionFourTeen />
+        <h4>
+          14.Create an HOC named withAuth that restricts access to a specific
+          component to authenticated users only. Implement this HOC on a
+          sampleFile: Untitled Document 1 component and demonstrate how it
+          protects routes.
+        </h4>
+
+        <AuthContextProvider>
+          <Navbar />
+          <Routes>
+            <Route path="/" Component={Login} />
+            <Route path="/home" Component={() => WithAuth(Home)} />
+          </Routes>
+        </AuthContextProvider>
+      </div>
+      <div id="question">
+        <ShowLog />
+      </div>
+      <div id="question">
+        <DataFetching />
       </div>
     </>
   );

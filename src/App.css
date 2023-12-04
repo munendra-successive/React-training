@@ -36,35 +36,26 @@
     transform: rotate(360deg);
   }
 }
-#question {
-  border: 2px outset black;
-  background-color: lightblue;
-  text-align: center;
-  padding: 5px 5px 5px 5px;
-  justify-content: center;
-}
-table {
+table,
+th,
+td {
+  border: 1px solid;
   margin-left: auto;
   margin-right: auto;
 }
-ul {
-  text-align: center;
-  display: inline-block;
-  text-align: left;
-}
-
-#product {
-  border: 5px solid;
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-}
-
 nav {
   background: #deb887;
   height: 25px;
   display: flex;
   justify-content: space-between;
+  margin: 10px 10px 10px 10px;
   padding: 0.2rem calc((100vw - 1000px) / 2);
   z-index: 12;
+}
+#question {
+  border: 5px outset black;
+  background-color: lightblue;
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  justify-content: center;
 }

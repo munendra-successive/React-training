@@ -1,23 +1,24 @@
 import "./App.css";
+import { Assignment1 } from "./assignment-1/index";
+// import {
+//   QuestionOne,
+//   Counter,
+//   LoginForm,
+//   UserProfile,
+//   ModalComponent,
+// } from "./assignment-6";
 
-import {
-  QuestionOne,
-  Counter,
-  LoginForm,
-  UserProfile,
-  ModalComponent,
-} from "./assignment-6";
-
-const userDetails = {
-  name: "Monu",
-  email: "monu@gmail.com",
-  phone: "9867463289",
-};
+// const userDetails = {
+//   name: "Monu",
+//   email: "monu@gmail.com",
+//   phone: "9867463289",
+// };
 
 function App() {
   return (
     <>
-      <div id="question">
+      <Assignment1 />
+      {/* <div id="question">
         <QuestionOne />
       </div>
 
@@ -32,7 +33,7 @@ function App() {
       </div>
       <div id="question">
         <ModalComponent />
-      </div>
+      </div> */}
     </>
   );
 }

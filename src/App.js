@@ -1,5 +1,6 @@
 import "./App.css";
-import { Assignment1 } from "./assignment-1/index";
+import { Assignment1 } from "./assignment-1/assignment-1";
+import { Assignment2 } from "./assignment-2/assignment-2";
 // import {
 //   QuestionOne,
 //   Counter,
@@ -17,7 +18,10 @@ import { Assignment1 } from "./assignment-1/index";
 function App() {
   return (
     <>
-      <Assignment1 />
+      {/* <Assignment1 /> */}
+
+      <Assignment2 />
+
       {/* <div id="question">
         <QuestionOne />
       </div>

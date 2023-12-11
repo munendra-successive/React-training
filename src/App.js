@@ -1,6 +1,7 @@
 import "./App.css";
 import { Assignment1 } from "./assignment-1/assignment-1";
 import { Assignment2 } from "./assignment-2/assignment-2";
+import { Assignment3 } from "./assignment-3/assignment-3";
 // import {
 //   QuestionOne,
 //   Counter,
@@ -20,7 +21,8 @@ function App() {
     <>
       {/* <Assignment1 /> */}
 
-      <Assignment2 />
+      {/* <Assignment2 /> */}
+      <Assignment3 />
 
       {/* <div id="question">
         <QuestionOne />

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { UserAuthContext } from "../../App";
+import { UserAuthContext } from "../assignment-3";
 
 const Navbar = () => {
   const { login, setLogin,setText } = useContext(UserAuthContext);

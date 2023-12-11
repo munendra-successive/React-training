@@ -19,10 +19,7 @@ import {
   StudentList,
   EmployeeSalary,
   CopyButton,
-  useClipboard,
-  useLocalStorage,
   UseLocal,
-  useTimer,
   CountDownTimer,
 } from "./index";
 
@@ -54,19 +51,43 @@ const Assignment2 = () => {
         <SlideShow />
       </div>
       <div id="question">
-        <QuestionNine />
+        <ThemeProvider>
+          <QuestionNine />
+        </ThemeProvider>
       </div>
       <div id="question">
-        <ThemeProvider />
+        <LanguageProvider>
+          <QuestionTen />
+        </LanguageProvider>
       </div>
       <div id="question">
-        <LanguageProvider />
+        <ShopProvider>
+          <ShoppingCart />
+        </ShopProvider>
       </div>
       <div id="question">
-        <QuestionTen />
+        <Voting />
       </div>
       <div id="question">
-        < />
+        <Parent />
+      </div>
+      <div id="question">
+        <List />
+      </div>
+      <div id="question">
+        <StudentList />
+      </div>
+      <div id="question">
+        <EmployeeSalary />
+      </div>
+      <div id="question">
+        <CopyButton />
+      </div>
+      <div id="question">
+        <UseLocal />
+      </div>
+      <div id="question">
+        <CountDownTimer />
       </div>
     </>
   );

@@ -7,21 +7,21 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        <Link to="/homefour">Home Page</Link>
-        <Link to="/aboutfour">About Page</Link>
-        <Link to="/servicefour">Service</Link>
+        <Link to="/assignment3/question4">Home Page</Link>
+        <Link to="/assignment3/question4/about">About Page</Link>
+        <Link to="/assignment3/question4/service">Service</Link>
         {loginfour ? (
           <Link
             onClick={() => {
               setLoginFour(false);
               setText("Please Login");
             }}
-            to="/homefour"
+            to="/assignment3/question4"
           >
             Log out
           </Link>
         ) : (
-          <Link to="/homefour">LogIn</Link>
+          <Link to="/assignment3/question4">LogIn</Link>
         )}
       </nav>
     </>

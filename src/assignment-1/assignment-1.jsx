@@ -4,6 +4,7 @@ import Greeting from "./Greeting";
 import TaskList from "./TaskList";
 import UserCard from "./UserCard";
 import Weather from "./Weather";
+import { Route, Routes, Link } from "react-router-dom";
 
 const Assignment1 = () => {
   const users = [
@@ -23,31 +24,32 @@ const Assignment1 = () => {
   const tasks = ["task 1", "task 2", "task 3", "task 4"];
   return (
     <>
-      <div id="question">
-        <Greeting />
-      </div>
+      <nav>
+        <Link to="/assignment1/">Question1</Link>
+        <Link to="/assignment1/question2">Question2</Link>
+        <Link to="/assignment1/question3">Question3</Link>
+        <Link to="/assignment1/question4">Question4</Link>
+        <Link to="/assignment1/question5">Question5</Link>
+        <Link to="/assignment1/question6">Question6</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Greeting />} />
 
-      <div id="question">
-        <UserCard users={users} />
-      </div>
+        <Route path="/question2" element={<UserCard users={users} />} />
 
-      <div id="question">
-        <Weather temperature={34} />
-      </div>
+        <Route path="/question3" element={<Weather temperature={34} />} />
 
-      <div id="question">
-        <Counter />
-      </div>
+        <Route path="/question4" element={<Counter />} />
 
-      <div id="question">
-        <TaskList tasks={tasks} />
-      </div>
+        <Route path="/question5" element={<TaskList tasks={tasks} />} />
 
-      <div id="question">
-        <Button text="Button" color="Yellow" />
-      </div>
+        <Route
+          path="/question6"
+          element={<Button text="Button" color="Yellow" />}
+        />
+      </Routes>
     </>
   );
 };
 
-export default Assignment1;
+export { Assignment1 };

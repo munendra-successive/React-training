@@ -16,7 +16,6 @@ const Login = () => {
     <>
       {!login && (
         <>
-          {" "}
           <div>{text}</div>
           <input
             type="text"

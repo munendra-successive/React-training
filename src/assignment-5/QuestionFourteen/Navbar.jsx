@@ -8,17 +8,21 @@ const Navbar = () => {
   return (
     <nav>
       <Link
-        to="/"
+        to="/assignment5/question14"
         onClick={() => {
           setLogin(false);
-          navigate("/");
+          navigate("/assignment5/question14");
         }}
       >
         Login
       </Link>
-      <Link to={login ? "/home" : "/"}>Home</Link>
+      <Link
+        to={login ? "/assignment5/question14/home" : "/assignment5/question14"}
+      >
+        Home
+      </Link>
       {login && (
-        <Link to="/" onClick={() => setLogin(false)}>
+        <Link to="/assignment5/question14/" onClick={() => setLogin(false)}>
           Logout
         </Link>
       )}

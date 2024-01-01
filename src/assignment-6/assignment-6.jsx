@@ -17,23 +17,24 @@ const userDetails = {
 const Assignment6 = () => {
   return (
     <>
-      <nav>
+      <nav className="navbar-1">
         <Link to="/assignment6/">Question1</Link>
         <Link to="/assignment6/question3">Question3</Link>
         <Link to="/assignment6/question4">Question4</Link>
         <Link to="/assignment6/question5">Question5</Link>
         <Link to="/assignment6/question6">Question6</Link>
       </nav>
+      <div id="question">
+        <Routes>
+          <Route path="/" element={<QuestionOne />} />
+          <Route path="/question3" element={<Counter />} />
+          <Route path="/question4" element={<LoginForm />} />
 
-      <Routes>
-        <Route path="/" element={<QuestionOne />} />
-        <Route path="/question3" element={<Counter />} />
-        <Route path="/question4" element={<LoginForm />} />
+          <Route path="/question5" element={<UserProfile {...userDetails} />} />
 
-        <Route path="/question5" element={<UserProfile {...userDetails} />} />
-
-        <Route path="/question6" element={<ModalComponent />} />
-      </Routes>
+          <Route path="/question6" element={<ModalComponent />} />
+        </Routes>
+      </div>
     </>
   );
 };

@@ -27,7 +27,7 @@ const Assignment5 = () => {
   const ShowLog = withLogger(ShowLogs);
   return (
     <>
-      <nav>
+      <nav className="navbar-1">
         <Link to="/assignment5/">Question1</Link>
         <Link to="/assignment5/question2">Question2</Link>
         <Link to="/assignment5/question3">Question3</Link>
@@ -43,45 +43,46 @@ const Assignment5 = () => {
         <Link to="/assignment5/question15">Question15</Link>
         <Link to="/assignment5/question16">Question16</Link>
       </nav>
+      <div is="question">
+        <Routes>
+          <Route path="/" element={<QuestionOne />} />
+          <Route path="/question2" element={<QuestionTwo />} />
 
-      <Routes>
-        <Route path="/" element={<QuestionOne />} />
-        <Route path="/question2" element={<QuestionTwo />} />
+          <Route path="/question3" element={<QuestionThree />} />
 
-        <Route path="/question3" element={<QuestionThree />} />
+          <Route path="/question4" element={<QuestionFour />} />
 
-        <Route path="/question4" element={<QuestionFour />} />
+          <Route path="/question5" element={<QuestionFive />} />
 
-        <Route path="/question5" element={<QuestionFive />} />
+          <Route path="/question6" element={<QuestionSix />} />
 
-        <Route path="/question6" element={<QuestionSix />} />
+          <Route path="/question7" element={<QuestionSeven />} />
 
-        <Route path="/question7" element={<QuestionSeven />} />
+          <Route path="/question8" element={<ApolloProvider1 />} />
 
-        <Route path="/question8" element={<ApolloProvider1 />} />
+          <Route path="/question9" element={<ApolloProvider2 />} />
 
-        <Route path="/question9" element={<ApolloProvider2 />} />
+          <Route path="/question12" element={<QuestionTwelve />} />
 
-        <Route path="/question12" element={<QuestionTwelve />} />
-
-        <Route path="/question13" element={<QuestionThirteen />} />
-        <Route
-          path="/question14/*"
-          element={
-            <>
-              <AuthContextProvider>
-                <Navbar />
-                <Routes>
-                  <Route path="/" element={<Login />} />
-                  <Route path="/home" element={() => WithAuth(Home)} />
-                </Routes>
-              </AuthContextProvider>
-            </>
-          }
-        />
-        <Route path="/question15" element={<ShowLog />} />
-        <Route path="/question16" element={<DataFetching />} />
-      </Routes>
+          <Route path="/question13" element={<QuestionThirteen />} />
+          <Route
+            path="/question14/*"
+            element={
+              <>
+                <AuthContextProvider>
+                  <Navbar />
+                  <Routes>
+                    <Route path="/" element={<Login />} />
+                    <Route path="/home" element={() => WithAuth(Home)} />
+                  </Routes>
+                </AuthContextProvider>
+              </>
+            }
+          />
+          <Route path="/question15" element={<ShowLog />} />
+          <Route path="/question16" element={<DataFetching />} />
+        </Routes>
+      </div>
     </>
   );
 };

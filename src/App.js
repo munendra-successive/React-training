@@ -18,6 +18,7 @@ function App() {
         <Link to="/assignment5/">Assignment5</Link>
         <Link to="/assignment6/">Assignment6</Link>
       </nav>
+
       <Routes>
         <Route path="/assignment1/*" element={<Assignment1 />} />
 
@@ -31,6 +32,7 @@ function App() {
 
         <Route path="/assignment6/*" element={<Assignment6 />} />
       </Routes>
+
       <Outlet />
     </>
   );

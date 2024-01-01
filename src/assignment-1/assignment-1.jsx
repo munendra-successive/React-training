@@ -24,7 +24,7 @@ const Assignment1 = () => {
   const tasks = ["task 1", "task 2", "task 3", "task 4"];
   return (
     <>
-      <nav>
+      <nav className="navbar-1">
         <Link to="/assignment1/">Question1</Link>
         <Link to="/assignment1/question2">Question2</Link>
         <Link to="/assignment1/question3">Question3</Link>
@@ -32,22 +32,24 @@ const Assignment1 = () => {
         <Link to="/assignment1/question5">Question5</Link>
         <Link to="/assignment1/question6">Question6</Link>
       </nav>
-      <Routes>
-        <Route path="/" element={<Greeting />} />
+      <div id="question">
+        <Routes>
+          <Route path="/" element={<Greeting />} />
 
-        <Route path="/question2" element={<UserCard users={users} />} />
+          <Route path="/question2" element={<UserCard users={users} />} />
 
-        <Route path="/question3" element={<Weather temperature={34} />} />
+          <Route path="/question3" element={<Weather temperature={34} />} />
 
-        <Route path="/question4" element={<Counter />} />
+          <Route path="/question4" element={<Counter />} />
 
-        <Route path="/question5" element={<TaskList tasks={tasks} />} />
+          <Route path="/question5" element={<TaskList tasks={tasks} />} />
 
-        <Route
-          path="/question6"
-          element={<Button text="Button" color="Yellow" />}
-        />
-      </Routes>
+          <Route
+            path="/question6"
+            element={<Button text="Button" color="Yellow" />}
+          />
+        </Routes>
+      </div>
     </>
   );
 };

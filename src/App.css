@@ -62,7 +62,7 @@ td {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #333; /* Change the background color as needed */
+  background-color: #1D2F3E; /* Change the background color as needed */
   padding: 10px;
 }
 
@@ -79,18 +79,18 @@ td {
   background-color: #555; /* Change the background color on hover */
 }
 
-.navbar-1 {
+nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: #e32525; /* Change the background color as needed */
+  background-color: #6E6E6E; /* Change the background color as needed */
   font-size: 12px;
   font-weight: bold;
 }
 
 /* Link styles */
-.navbar-1 a {
+nav a {
   text-decoration: none;
   color: #fff; /* Link text color */
   padding: 8px 10px;
@@ -98,13 +98,13 @@ td {
 }
 
 /* Hover effect on links */
-.navbar-1 a:hover {
+nav a:hover {
   background-color: #555; /* Change the background color on hover */
 }
 
 #question {
-  border: 5px outset black;
-  background-color: lightblue;
+  border: 3px outset black;
+  background-color: #eceff1;
   text-align: center;
   padding: 5px 5px 5px 5px;
   justify-content: center;

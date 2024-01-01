@@ -28,7 +28,7 @@ import {
 const Assignment2 = () => {
   return (
     <>
-      <nav class="navbar-1">
+      <nav className="navbar-1">
         <Link to="/assignment2/">Question1</Link>
         <Link to="/assignment2/question2">Question2</Link>
         <Link to="/assignment2/question3">Question3</Link>
@@ -49,50 +49,52 @@ const Assignment2 = () => {
         <Link to="/assignment2/question18">Question18</Link>
         <Link to="/assignment2/question19">Question19</Link>
       </nav>
-      <Routes>
-        <Route path="/" element={<Counter />} />
-        <Route path="/question2" element={<PersonForm />} />
-        <Route path="/question3" element={<ToDoList />} />
-        <Route path="/question4" element={<RandomNumberGenerator />} />
-        <Route path="/question5" element={<CounterWithStep />} />
-        <Route path="/question6" element={<Clock />} />
-        <Route path="/question7" element={<Notification />} />
-        <Route path="/question8" element={<SlideShow />} />
+      <div id="question">
+        <Routes>
+          <Route path="/" element={<Counter />} />
+          <Route path="/question2" element={<PersonForm />} />
+          <Route path="/question3" element={<ToDoList />} />
+          <Route path="/question4" element={<RandomNumberGenerator />} />
+          <Route path="/question5" element={<CounterWithStep />} />
+          <Route path="/question6" element={<Clock />} />
+          <Route path="/question7" element={<Notification />} />
+          <Route path="/question8" element={<SlideShow />} />
 
-        <Route
-          path="/question9"
-          element={
-            <ThemeProvider>
-              <QuestionNine />
-            </ThemeProvider>
-          }
-        />
-        <Route
-          path="/question10"
-          element={
-            <LanguageProvider>
-              <QuestionTen />
-            </LanguageProvider>
-          }
-        />
+          <Route
+            path="/question9"
+            element={
+              <ThemeProvider>
+                <QuestionNine />
+              </ThemeProvider>
+            }
+          />
+          <Route
+            path="/question10"
+            element={
+              <LanguageProvider>
+                <QuestionTen />
+              </LanguageProvider>
+            }
+          />
 
-        <Route
-          path="/question11"
-          element={
-            <ShopProvider>
-              <ShoppingCart />
-            </ShopProvider>
-          }
-        />
-        <Route path="/question12" element={<Voting />} />
-        <Route path="/question13" element={<Parent />} />
-        <Route path="/question14" element={<List />} />
-        <Route path="/question15" element={<StudentList />} />
-        <Route path="/question16" element={<EmployeeSalary />} />
-        <Route path="/question17" element={<CopyButton />} />
-        <Route path="/question18" element={<UseLocal />} />
-        <Route path="/question19" element={<CountDownTimer />} />
-      </Routes>
+          <Route
+            path="/question11"
+            element={
+              <ShopProvider>
+                <ShoppingCart />
+              </ShopProvider>
+            }
+          />
+          <Route path="/question12" element={<Voting />} />
+          <Route path="/question13" element={<Parent />} />
+          <Route path="/question14" element={<List />} />
+          <Route path="/question15" element={<StudentList />} />
+          <Route path="/question16" element={<EmployeeSalary />} />
+          <Route path="/question17" element={<CopyButton />} />
+          <Route path="/question18" element={<UseLocal />} />
+          <Route path="/question19" element={<CountDownTimer />} />
+        </Routes>
+      </div>
     </>
   );
 };

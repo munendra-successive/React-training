@@ -20,7 +20,7 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/assignment1/*" element={<Assignment1 />} />
+        <Route path="/assignment1/*"     element={<Assignment1 />} />
 
         <Route path="/assignment2/*" element={<Assignment2 />} />
 

@@ -135,10 +135,10 @@ const Assignment3 = () => {
           />
 
           <Route
-            path="/question6"
+            path="/question6/*"
             element={
               <>
-                <Link to="/">Home Page</Link>
+                <Link to="/assignment3">Home Page</Link>
                 <Routes>
                   <Route path="/" element={<HomeSix />} />
                   <Route path="/product/:id" element={<ProductDetail />} />

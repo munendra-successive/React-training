@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  console.log("id is: ", id);
   return (
     <div id="product">
       <h4>Product Details Page</h4>

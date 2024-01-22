@@ -18,7 +18,7 @@ const AuthContextProvider = ({ children }) => {
       setUsername("");
       setPassword("");
       setText("Please Login");
-      navi("/home");
+      navi("/assignment5/question14/home");
     } else {
       setText("Invalid Username or Password");
     }

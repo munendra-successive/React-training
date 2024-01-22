@@ -11,7 +11,7 @@ Customize the content displayed on each sub-page.
 import React, { useContext } from "react";
 
 import { useNavigate } from "react-router-dom";
-import { UserAuthContext } from "../../App";
+import { UserAuthContext } from "../assignment-3";
 const Home = () => {
   const navigate = useNavigate();
   const {
